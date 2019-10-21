@@ -113,6 +113,14 @@ module.exports = grunt => {
         dest: "reveal-js-presentation.zip",
       },
     },
+    copy: {
+      main: {
+        files: [{ expand: true, src: ["index.html", "css/**", "js/**", "lib/**", "img/**", "plugin/**", "**.md"], dest: "dist/" }],
+      },
+      js: {
+        files: [{ expand: true, src: ["index.html", "css/**", "js/**", "lib/**", "img/**", "plugin/**", "**.md"], dest: "dist/" }],
+      },
+    },
 
     watch: {
       js: {
@@ -145,12 +153,13 @@ module.exports = grunt => {
 
   grunt.loadNpmTasks("grunt-contrib-clean");
   grunt.loadNpmTasks("grunt-contrib-nodeunit");
+  grunt.loadNpmTasks("grunt-contrib-copy");
 
   // Default task
   grunt.registerTask("default", ["css", "js"]);
 
   // JS task
-  grunt.registerTask("js", ["jshint", "uglify"]);
+  grunt.registerTask("js", ["jshint", "uglify", "copy"]);
 
   // Theme CSS
   grunt.registerTask("css-themes", ["sass:themes"]);
@@ -169,4 +178,6 @@ module.exports = grunt => {
 
   // Run tests
   grunt.registerTask("test", ["jshint"]);
+
+  grunt.registerTask("dist", ["default", "copy"]);
 };
