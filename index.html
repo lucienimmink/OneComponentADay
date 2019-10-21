@@ -43,6 +43,64 @@
   Fallback
 </album-art></code></pre>
         </section>
+        <section>
+          <section>
+            <h3>What are web components</h3>
+            <img src="img/web-components.webp" alt="Web components" />
+          </section>
+          <section>
+            <h1>Templates</h1>
+          </section>
+          <section>
+            <p>
+              The HTML Content Template (<span class="code-element">&lt;template&gt;</span>) element is a mechanism for holding HTML that is not to be rendered
+              immediately when a page is loaded but may be instantiated subsequently during runtime using JavaScript.
+            </p>
+          </section>
+          <section>
+            <p>Example template</p>
+            <pre><code class="hljs html"><template id="template">
+  <div class="card-artist">
+    <img class="artist-art" alt="artist" src="img/placeholder.webp">
+    <h2>artist name</h2>
+    <p class="artist-bio"></p>
+  </div>
+</template></code></pre>
+          </section>
+          <section>
+            <p class="warn">
+              This DOM is not live.<br />
+              No calls will be made to fetch the image. <br />
+              No CSS is applied and if you add a script node, <br />No code is excecuted.
+            </p>
+          </section>
+          <section>
+            <p>Use JavaScript to use the template</p>
+            <pre><code class="hljs js">if ('content' in document.createElement('template')) {
+  const template = document.querySelector('#template');
+
+  // clone the template, fill in the values and append it
+  const clone = document.importNode(template.content, true);
+  clone.querySelector('img').setAttribute('src', url);
+  clone.querySelector('h2').textContent = artistName;
+  clone.querySelector('.artist-bio').textContent = bio;
+  document.querySelector('body').appendChild(clone);
+}</code></pre>
+          </section>
+          <section>
+            <p class="warn">
+              Once added to live DOM the image is fetched <br />
+              CSS is applied to the nodes <br />
+              The script(s) are excecuted.
+            </p>
+          </section>
+          <section>
+            <h1>Shadow DOM</h1>
+          </section>
+          <section>
+            <h1>Custom Elements</h1>
+          </section>
+        </section>
       </div>
     </div>
     <div class="editor-hook"></div>

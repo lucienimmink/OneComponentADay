@@ -1792,3 +1792,31 @@ $notesWidthPercent: 25%;
         box-shadow: none;
     }
 }
+
+/**
+* My own stuff
+**/
+.reveal pre .code-file {
+    display: block;
+    background: rgba(255,255,255,0.2);
+    padding: 0.5rem 1rem;
+    margin-top: -2.25rem;
+    color: white;
+}
+.reveal .warn {
+    padding: 2rem 5rem 2rem 8rem;
+    background: rgba(255,255,0,0.65);
+    color: black;
+    text-align: left;
+    &:before {
+        content: '⚠';
+        font-size: 4rem;
+        display: inline-block;
+        margin-left: -6rem;
+        width: 4rem;
+        position: absolute;
+    }
+}
+.reveal .code-element {
+    color: #F92672;
+}
