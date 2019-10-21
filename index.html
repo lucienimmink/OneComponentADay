@@ -59,13 +59,14 @@
           </section>
           <section>
             <p>Example template</p>
-            <pre><code class="hljs html"><template id="template">
+            <pre><code class="hljs html" data-line-numbers><template id="template">
   <div class="card-artist">
     <img class="artist-art" alt="artist" src="img/placeholder.webp">
     <h2>artist name</h2>
     <p class="artist-bio"></p>
   </div>
-</template></code></pre>
+</template></code>
+<span class="code-file">File: some-page.html</span></pre>
           </section>
           <section>
             <p class="warn">
@@ -76,16 +77,19 @@
           </section>
           <section>
             <p>Use JavaScript to use the template</p>
-            <pre><code class="hljs js">if ('content' in document.createElement('template')) {
+            <pre><code class="hljs js" data-line-numbers>if ('content' in document.createElement('template')) {
   const template = document.querySelector('#template');
 
-  // clone the template, fill in the values and append it
+  // clone the template and fill in the values
   const clone = document.importNode(template.content, true);
   clone.querySelector('img').setAttribute('src', url);
   clone.querySelector('h2').textContent = artistName;
   clone.querySelector('.artist-bio').textContent = bio;
+
+  // now we can add it to the DOM
   document.querySelector('body').appendChild(clone);
-}</code></pre>
+}</code>
+<span class="code-file">File: some-script.js</span></pre>
           </section>
           <section>
             <p class="warn">
@@ -95,10 +99,94 @@
             </p>
           </section>
           <section>
+            <h1>Custom Elements</h1>
+          </section>
+          <section>
+            <p>
+              The ability to create custom elements that encapsulate your functionality on an HTML page, rather than having to make do with a long, nested batch
+              of elements that together provide a custom page feature
+            </p>
+          </section>
+          <section>
+            <p>Create custom element by extending an HTML element</p>
+            <pre><code class="hljs js" data-line-numbers>class AlbumArt extends HTMLElement {
+    constructor() {
+        // Always call super first
+        super();
+
+        // add your magic
+    }
+}</code>
+<span class="code-file">File: my-custom-element.js</span></pre>
+          </section>
+          <section>
+            <p>Registering the element is a one-liner</p>
+            <pre><code class="hljs js" data-line-numbers>customElements.define('album-art', AlbumArt);</code>
+<span class="code-file">File: my-custom-element.js</span></pre>
+          </section>
+          <section>
+            <p>Now we can use it anywhere</p>
+            <pre><code class="hljs html" data-line-numbers="3"><article class="artist-info">
+    <p>Lorem ipsizzle get down get down sizzle amizzle</p>
+    <album-art artist="2pac"></album-art>
+    <p>Nullam sapien velizzle, crazy volutpizzle, fo shizzle.</p>
+</article></code>
+<span class="code-file">File: alien-page.html</span></pre>
+          </section>
+          <section>
             <h1>Shadow DOM</h1>
           </section>
           <section>
-            <h1>Custom Elements</h1>
+            <p>Shadow DOM allows hidden DOM trees to be attached to elements in the regular DOM tree</p>
+          </section>
+          <section>
+            <img src="img/shadow-dom.webp" alt="shadow dom explanation" />
+          </section>
+          <section>
+            <p>Attach a shadow DOM inside a custom element</p>
+            <pre><code class="hljs js" data-line-numbers>const shadow = this.attachShadow({mode: 'open'});</code>
+<span class="code-file">File: my-custom-element.js</span></pre>
+          </section>
+          <section>
+            <p>Now we can create the DOM</p>
+            <pre><code class="hljs js" data-line-numbers>const wrapper = document.createElement('div');
+wrapper.classList.add('wrapper');
+const image = document.createElement('img');
+
+// use the img attributre of the custom element if present
+let imageUrl = 'img/placeholder.webp';
+if (this.hasAttribute('img')) {
+    imageUrl = this.getAttribute('img');
+}
+image.src = imageUrl;
+
+// add the new elements to the shadow DOM
+wrapper.appendChild(image);
+shadow.appendChild(wrapper);</code>
+<span class="code-file">File: my-custom-element.js</span></pre>
+          </section>
+          <section>
+            <p>and add styling to it by using CSS</p>
+            <pre><code class="hljs js" data-line-numbers>const styleElem = document.createElement('style');
+styleElem.textContent = `
+.wrapper {
+    position: relative;
+}
+img {
+    display: block;
+    object-fit: cover;
+}`;
+shadow.appendChild(styleElem);</code>
+<span class="code-file">File: my-custom-element.js</span></pre>
+          </section>
+          <section>
+            <p>Which could also be external</p>
+            <pre><code class="hljs js" data-line-numbers>const linkElem = document.createElement('link');
+linkElem.setAttribute('rel', 'stylesheet');
+linkElem.setAttribute('href', 'style.css');
+
+shadow.appendChild(linkElem);</code>
+<span class="code-file">File: my-custom-element.js</span></pre>
           </section>
         </section>
       </div>
