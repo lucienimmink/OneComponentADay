@@ -125,6 +125,16 @@
 <span class="code-file">File: my-custom-element.js</span></pre>
           </section>
           <section>
+            <p>Customized built-in elements</p>
+            <pre><code class="hljs js" data-line-numbers>class List extends HTMLULElement {
+    // enter code here; but think of the consequences
+    // do you really need to extend a built-in element?
+    // how it that not confusing 🤷
+};
+customElements.define('list', List, { extends: "ul" });</code>
+<span class="code-file">File: my-custom-built-in-element.js</span></pre>
+          </section>
+          <section>
             <p>Now we can use it anywhere</p>
             <pre><code class="hljs html" data-line-numbers="3"><article class="artist-info">
     <p>Lorem ipsizzle get down get down sizzle amizzle</p>
@@ -132,6 +142,15 @@
     <p>Nullam sapien velizzle, crazy volutpizzle, fo shizzle.</p>
 </article></code>
 <span class="code-file">File: alien-page.html</span></pre>
+          </section>
+          <section>
+            <h3>Lifecycle callbacks</h3>
+            <ul>
+              <li class="code-element">connectedCallback</li>
+              <li class="code-element">disconnectedCallback</li>
+              <li class="code-element">adoptedCallback</li>
+              <li class="code-element">attributeChangedCallback</li>
+            </ul>
           </section>
           <section>
             <h1>Shadow DOM</h1>
