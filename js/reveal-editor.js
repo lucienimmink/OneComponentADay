@@ -24,7 +24,7 @@
 
     //Parses HTML Code
     function parseHtml() {
-      var s = `<script type="module" src="node_modules/album-art-component/build/album-art.js"></script>`;
+      var s = `<script type="module" src="plugin/album-art.js"></script>`;
       $("#htmlEditor .ace_line").each(function() {
         s += $(this).text();
       });
@@ -264,10 +264,8 @@
         if (e.keyCode === 72 && e.altKey) {
           $("a.html").click();
         }
-        console.log(e.keyCode);
       });
     }
-
     init(this);
   };
 })(jQuery);

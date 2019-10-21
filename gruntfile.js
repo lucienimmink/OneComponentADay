@@ -118,7 +118,23 @@ module.exports = grunt => {
         files: [{ expand: true, src: ["index.html", "css/**", "js/**", "lib/**", "img/**", "plugin/**", "**.md"], dest: "dist/" }],
       },
       js: {
-        files: [{ expand: true, src: ["index.html", "css/**", "js/**", "lib/**", "img/**", "plugin/**", "**.md"], dest: "dist/" }],
+        files: [
+          {
+            expand: true,
+            flatten: true,
+            src: [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/ace-builds/src-noconflict/ace.js",
+              "node_modules/ace-builds/src-noconflict/theme-monokai.js",
+              "node_modules/ace-builds/src-noconflict/mode-html.js",
+              "node_modules/ace-builds/src-noconflict/mode-css.js",
+              "node_modules/ace-builds/src-noconflict/worker-html.js",
+              "node_modules/ace-builds/src-noconflict/worker-css.js",
+              "node_modules/album-art-component/build/album-art.js",
+            ],
+            dest: "plugin/",
+          },
+        ],
       },
     },
 
