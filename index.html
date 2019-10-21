@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>A component a day keeps the doctor away</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/theme/moon.css" />
+    <link rel="stylesheet" href="lib/css/monokai.css" />
+    <link rel="stylesheet" href="css/reveal-editor.css" />
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = window.location.search.match(/print-pdf/gi) ? "css/print/pdf.css" : "css/print/paper.css";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    </script>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/ace-builds/src-noconflict/ace.js"></script>
+    <script src="js/reveal-editor.js"></script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>A component a day keeps the doctor away</h1>
+        </section>
+        <section>
+          <h2>A simple example</h2>
+          <pre><code class="hljs html"><album-art artist="the gathering">
+    Fallback
+</album-art></code></pre>
+        </section>
+        <section>
+          <h2>More example!</h2>
+          <pre><code class="hljs html"><album-art artist="ayreon" album="into the electric castle">
+  Fallback
+</album-art></code></pre>
+        </section>
+      </div>
+    </div>
+    <div class="editor-hook"></div>
+
+    <script src="js/reveal.js"></script>
+
+    <script>
+      Reveal.initialize({
+        controls: false,
+        progress: false,
+        history: true,
+        dependencies: [{ src: "plugin/notes/notes.js", async: true }, { src: "plugin/highlight/highlight.js", async: true }],
+      });
+
+      $("code").RevealEditor();
+    </script>
+  </body>
+</html>
