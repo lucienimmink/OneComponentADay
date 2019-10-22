@@ -192,7 +192,6 @@
         var $section = $("section.present:not(.stack)"),
           s = $section.find("code").get(0).innerText,
           id = $(".ace.active").attr("id");
-        console.log($section.find("code"));
         if ($section.has(".hljs.html").length !== 0) {
           id = $(".ace#htmlEditor").attr("id");
           $(".active").toggleClass("active");
