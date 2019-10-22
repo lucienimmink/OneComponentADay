@@ -34,16 +34,16 @@
         <section>
           <h2>A simple example</h2>
           <pre><code class="hljs html" data-line-numbers><album-art artist="the gathering">
-    Fallback
-</album-art></code>
-<span class="code-file">File: some-file.html</span></pre>
+  Fallback
+</album-art></code></pre>
+          <span class="code-file">File: some-page.html</span>
         </section>
         <section>
           <h2>More example!</h2>
           <pre><code class="hljs html" data-line-numbers><album-art artist="ayreon" album="into the electric castle">
   Fallback
-</album-art></code>
-<span class="code-file">File: some-file.html</span></pre>
+</album-art></code></pre>
+          <span class="code-file">File: some-page.html</span>
         </section>
         <section>
           <section>
@@ -67,8 +67,8 @@
     <h2>artist name</h2>
     <p class="artist-bio"></p>
   </div>
-</template></code>
-<span class="code-file">File: some-page.html</span></pre>
+</template></code></pre>
+            <span class="code-file">File: some-page.html</span>
           </section>
           <section>
             <p class="warn">
@@ -90,8 +90,8 @@
 
   // now we can add it to the DOM
   document.querySelector('body').appendChild(clone);
-}</code>
-<span class="code-file">File: some-script.js</span></pre>
+}</code></pre>
+            <span class="code-file">File: some-script.js</span>
           </section>
           <section>
             <p class="warn">
@@ -118,13 +118,13 @@
 
         // add your magic
     }
-}</code>
-<span class="code-file">File: my-custom-element.js</span></pre>
+}</code></pre>
+            <span class="code-file">File: my-custom-element.js</span>
           </section>
           <section>
             <p>Registering the element is a one-liner</p>
-            <pre><code class="hljs js" data-line-numbers>customElements.define('album-art', AlbumArt);</code>
-<span class="code-file">File: my-custom-element.js</span></pre>
+            <pre><code class="hljs js" data-line-numbers>customElements.define('album-art', AlbumArt);</code></pre>
+            <span class="code-file">File: my-custom-element.js</span>
           </section>
           <section>
             <p>Customized built-in elements</p>
@@ -133,8 +133,8 @@
     // do you really need to extend a built-in element?
     // how it that not confusing 🤷
 };
-customElements.define('list', List, { extends: "ul" });</code>
-<span class="code-file">File: my-custom-built-in-element.js</span></pre>
+customElements.define('list', List, { extends: "ul" });</code></pre>
+            <span class="code-file">File: my-custom-built-in-element.js</span>
           </section>
           <section>
             <p>Now we can use it anywhere</p>
@@ -142,8 +142,8 @@ customElements.define('list', List, { extends: "ul" });</code>
     <p>Lorem ipsizzle get down get down sizzle amizzle</p>
     <album-art artist="2pac"></album-art>
     <p>Nullam sapien velizzle, crazy volutpizzle, fo shizzle.</p>
-</article></code>
-<span class="code-file">File: alien-page.html</span></pre>
+</article></code></pre>
+            <span class="code-file">File: alien-page.html</span>
           </section>
           <section>
             <h3>Lifecycle callbacks</h3>
@@ -165,8 +165,8 @@ customElements.define('list', List, { extends: "ul" });</code>
           </section>
           <section>
             <p>Attach a shadow DOM inside a custom element</p>
-            <pre><code class="hljs js" data-line-numbers>const shadow = this.attachShadow({mode: 'open'});</code>
-<span class="code-file">File: my-custom-element.js</span></pre>
+            <pre><code class="hljs js" data-line-numbers>const shadow = this.attachShadow({mode: 'open'});</code></pre>
+            <span class="code-file">File: my-custom-element.js</span>
           </section>
           <section>
             <p>Now we can create the DOM</p>
@@ -183,8 +183,8 @@ image.src = imageUrl;
 
 // add the new elements to the shadow DOM
 wrapper.appendChild(image);
-shadow.appendChild(wrapper);</code>
-<span class="code-file">File: my-custom-element.js</span></pre>
+shadow.appendChild(wrapper);</code></pre>
+            <span class="code-file">File: my-custom-element.js</span>
           </section>
           <section>
             <p>and add styling to it by using CSS</p>
@@ -197,8 +197,8 @@ img {
     display: block;
     object-fit: cover;
 }`;
-shadow.appendChild(styleElem);</code>
-<span class="code-file">File: my-custom-element.js</span></pre>
+shadow.appendChild(styleElem);</code></pre>
+            <span class="code-file">File: my-custom-element.js</span>
           </section>
           <section>
             <p>Which could also be external</p>
@@ -206,8 +206,8 @@ shadow.appendChild(styleElem);</code>
 linkElem.setAttribute('rel', 'stylesheet');
 linkElem.setAttribute('href', 'style.css');
 
-shadow.appendChild(linkElem);</code>
-<span class="code-file">File: my-custom-element.js</span></pre>
+shadow.appendChild(linkElem);</code></pre>
+            <span class="code-file">File: my-custom-element.js</span>
           </section>
         </section>
       </div>

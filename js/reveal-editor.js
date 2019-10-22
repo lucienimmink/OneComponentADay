@@ -5,7 +5,7 @@
     var settings = $.extend(
       {
         aceTheme: "ace/theme/monokai",
-        javascript: false,
+        javascript: true,
         html: true,
         css: true,
         fontSize: 24,
@@ -190,8 +190,9 @@
 
       $(".copy").on("click", function() {
         var $section = $("section.present:not(.stack)"),
-          s = $section.find("code").text(),
+          s = $section.find("code").get(0).innerText,
           id = $(".ace.active").attr("id");
+        console.log($section.find("code"));
         if ($section.has(".hljs.html").length !== 0) {
           id = $(".ace#htmlEditor").attr("id");
           $(".active").toggleClass("active");
@@ -214,6 +215,7 @@
           $(".output .wrapper.js").show();
           $(".js").toggleClass("active");
         }
+        s = s.replace(/((\t\n)|\n\n)/gm, "");
         ace
           .edit(id)
           .getSession()
