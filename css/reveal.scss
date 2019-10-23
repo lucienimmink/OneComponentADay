@@ -1823,3 +1823,7 @@ $notesWidthPercent: 25%;
 .reveal .code-element {
     color: #F92672;
 }
+#google-maps iframe {
+    height: 100vh;
+    width: 100vw;
+}
