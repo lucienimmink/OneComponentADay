@@ -28,40 +28,34 @@
   <body>
     <div class="reveal">
       <div class="slides">
-        <section>
+        <section data-group="title">
           <h1>A component a day keeps the doctor away</h1>
         </section>
-        <section>
-          <h2>A simple example</h2>
-          <pre><code class="hljs html" data-line-numbers><album-art artist="the gathering">
-  Fallback
-</album-art></code></pre>
-          <span class="code-file">File: some-page.html</span>
-        </section>
-        <section>
-          <h2>More example!</h2>
-          <pre><code class="hljs html" data-line-numbers><album-art artist="ayreon" album="into the electric castle">
-  Fallback
-</album-art></code></pre>
-          <span class="code-file">File: some-page.html</span>
-        </section>
-        <section class="stack" data-background="img/isaac-bg.webp" data-group="ISAAC - Lucien Immink">
-            <section>Lucien Immink, B.Eng</section>
-            <section>
-              <img src="img/lucien-square.webp" alt="Lucien Immink, B.Eng" />
-            </section>
-            <section>
-              Software Architect<br />
-              Web Evangelist<br />
-              @ <em>ISAAC</em>
-            </section>
-            <section>
-                <div id="google-maps">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d70.49368579825386!2d5.463075369060892!3d51.4512164400623!2m3!1f0!2f45.04469628013218!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x47c6d93fcde42b59%3A0xb1fdab2a93bde85d!2sISAAC!5e1!3m2!1sen!2snl!4v1571839417768!5m2!1sen!2snl" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-                </div>
-            </section>
+        <section data-group="intro"></section>
+        <section data-background="img/isaac-bg.webp" data-group="ISAAC - Lucien Immink">
+          <section>Lucien Immink, B.Eng</section>
+          <section>
+            <img src="img/lucien-square.webp" alt="Lucien Immink, B.Eng" />
           </section>
-        <section>
+          <section>
+            Software Architect<br />
+            Web Evangelist<br />
+            @ <em>ISAAC</em>
+          </section>
+          <section>
+            <div id="google-maps">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d70.49368579825386!2d5.463075369060892!3d51.4512164400623!2m3!1f0!2f45.04469628013218!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x47c6d93fcde42b59%3A0xb1fdab2a93bde85d!2sISAAC!5e1!3m2!1sen!2snl!4v1571839417768!5m2!1sen!2snl"
+                width="600"
+                height="450"
+                frameborder="0"
+                style="border:0;"
+                allowfullscreen=""
+              ></iframe>
+            </div>
+          </section>
+        </section>
+        <section data-group="what-are">
           <section>
             <h3>What are web components</h3>
             <img src="img/web-components.webp" alt="Web components" />
@@ -80,7 +74,7 @@
             <pre><code class="hljs html" data-line-numbers><template id="template">
   <div class="card-artist">
     <img class="artist-art" alt="artist" src="img/placeholder.webp">
-    <h2>artist name</h2>
+    <slot name="title">artist name</slot>
     <p class="artist-bio"></p>
   </div>
 </template></code></pre>
@@ -90,7 +84,9 @@
             <p class="warn">
               This DOM is not live.<br />
               No calls will be made to fetch the image. <br />
-              No CSS is applied and if you add a script node, <br />No code is excecuted.
+              No CSS is applied and if you add a script node, <br />
+              No code is excecuted.<br />
+              <span class="code-element">&lt;slot&gt;</span> is used as hook to place external HTML
             </p>
           </section>
           <section>
@@ -101,7 +97,6 @@
   // clone the template and fill in the values
   const clone = document.importNode(template.content, true);
   clone.querySelector('img').setAttribute('src', url);
-  clone.querySelector('h2').textContent = artistName;
   clone.querySelector('.artist-bio').textContent = bio;
 
   // now we can add it to the DOM
@@ -128,12 +123,12 @@
           <section>
             <p>Create custom element by extending an HTML element</p>
             <pre><code class="hljs js" data-line-numbers>class AlbumArt extends HTMLElement {
-    constructor() {
-        // Always call super first
-        super();
+  constructor() {
+    // Always call super first
+    super();
 
-        // add your magic
-    }
+    // add your magic
+  }
 }</code></pre>
             <span class="code-file">File: my-custom-element.js</span>
           </section>
@@ -145,19 +140,21 @@
           <section>
             <p>Customized built-in elements</p>
             <pre><code class="hljs js" data-line-numbers>class List extends HTMLULElement {
-    // enter code here; but think of the consequences
-    // do you really need to extend a built-in element?
-    // how it that not confusing 🤷
+  // enter code here; but think of the consequences
+  // do you really need to extend a built-in element?
+  // how it that not confusing 🤷
 };
 customElements.define('list', List, { extends: "ul" });</code></pre>
             <span class="code-file">File: my-custom-built-in-element.js</span>
           </section>
           <section>
             <p>Now we can use it anywhere</p>
-            <pre><code class="hljs html" data-line-numbers="3"><article class="artist-info">
-    <p>Lorem ipsizzle get down get down sizzle amizzle</p>
-    <album-art artist="2pac"></album-art>
-    <p>Nullam sapien velizzle, crazy volutpizzle, fo shizzle.</p>
+            <pre><code class="hljs html" data-line-numbers="3-5"><article class="artist-info">
+  <p>Lorem ipsizzle get down get down sizzle amizzle</p>
+  <album-art artist="2pac">
+    <h2 slot="title">2pac</h2>
+  </album-art>
+  <p>Nullam sapien velizzle, crazy volutpizzle, fo shizzle.</p>
 </article></code></pre>
             <span class="code-file">File: alien-page.html</span>
           </section>
@@ -193,7 +190,7 @@ const image = document.createElement('img');
 // use the img attributre of the custom element if present
 let imageUrl = 'img/placeholder.webp';
 if (this.hasAttribute('img')) {
-    imageUrl = this.getAttribute('img');
+  imageUrl = this.getAttribute('img');
 }
 image.src = imageUrl;
 
@@ -206,10 +203,10 @@ shadow.appendChild(wrapper);</code></pre>
             <p>and add styling to it by using CSS</p>
             <pre><code class="hljs js" data-line-numbers>const styleElem = document.createElement('style');
 styleElem.textContent = `
-.wrapper {
+  .wrapper {
     position: relative;
-}
-img {
+  }
+  img {
     display: block;
     object-fit: cover;
 }`;
@@ -229,8 +226,24 @@ shadow.appendChild(linkElem);</code></pre>
             <p class="warn">
               Please pay attention if you load CSS this way <br />
               What is the URL? 🤔 <br />
-              <span class="fragment"></span>Only use <strong>Absolute URIs</strong></span>
+              <span class="fragment">Only use <strong>Absolute URIs</strong> <br /></span>
+              <span class="fragment">Or better yet, not at all</span>
             </p>
+          </section>
+        </section>
+        <section data-group="tools">
+          <section>
+            <h2>Tools</h2>
+          </section>
+        </section>
+        <section data-group="integrate">
+          <section>
+            <h2>Integrate</h2>
+          </section>
+        </section>
+        <section data-group="closing-thoughts">
+          <section>
+            <h2>Closing thoughts</h2>
           </section>
         </section>
       </div>
