@@ -1825,6 +1825,11 @@ $notesWidthPercent: 25%;
 .reveal .code-element {
     color: #F92672;
 }
+.reveal .wc-wrapper {
+  padding: 5rem;
+  background: white;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+}
 #google-maps iframe {
     height: 100vh;
     width: 100vw;

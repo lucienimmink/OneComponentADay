@@ -24,6 +24,10 @@
     <script src="plugin/jquery.min.js"></script>
     <script src="plugin/ace.js"></script>
     <script src="js/reveal-editor.js"></script>
+    <script type="module">
+      import enableElement from "https://cdn.pika.dev/render-plantuml";
+      enableElement();
+    </script>
   </head>
   <body>
     <div class="reveal">
@@ -31,7 +35,11 @@
         <section data-group="title">
           <h1>A component a day keeps the doctor away</h1>
         </section>
-        <section data-group="intro"></section>
+        <section data-group="intro">
+          <section>
+            <blockquote>I have</blockquote>
+          </section>
+        </section>
         <section data-background="img/isaac-bg.webp" data-group="ISAAC - Lucien Immink">
           <section>Lucien Immink, B.Eng</section>
           <section>
@@ -244,6 +252,45 @@ shadow.appendChild(linkElem);</code></pre>
         <section data-group="closing-thoughts">
           <section>
             <h2>Closing thoughts</h2>
+          </section>
+          <section>
+            <h2>Some examples</h2>
+          </section>
+          <section>
+            <h3>render-plantuml</h3>
+            <pre><code class="hljs html" data-line-numbers><render-plantuml server="https://some-server">
+  Actor -> "Actor 2" : Hooray an example!
+</render-plantuml></code></pre>
+            <a href="https://github.com/bauglir/render-plantuml" rel="noopener" target="_blank"
+              ><img src="img/render-plantuml-example.webp" alt="API viewer"
+            /></a>
+            <br />
+            URL <a href="https://github.com/bauglir/render-plantuml" rel="noopener" target="_blank">https://github.com/bauglir/render-plantuml</a>
+          </section>
+          <section>
+            <h3>api-viewer</h3>
+            <pre><code class="hljs html" data-line-numbers><api-viewer src="./custom-elements.json"></api-viewer></code></pre>
+            <a href="https://github.com/web-padawan/api-viewer-element" rel="noopener" target="_blank"
+              ><img src="img/api-viewer-screenshot.webp" alt="API viewer"
+            /></a>
+          </section>
+          <section>
+            <h3>vaadin-date-picker</h3>
+            <pre><code class="hljs html" data-line-numbers><vaadin-date-picker label="Birthday" value="1980-08-14"></vaadin-date-picker></code></pre>
+            <a href="https://vaadin.com/components/vaadin-date-picker/html-examples" rel="noopener" target="_blank"
+              ><img src="img/vaadin-date-picker-screenshot.webp" alt="vaading date-picker"
+            /></a>
+          </section>
+          <section>
+            <h3>Utilities</h3>
+            <ul>
+              <li>grid</li>
+              <li class="fragment">modal</li>
+              <li class="fragment">take-over</li>
+              <li class="fragment">wizards</li>
+              <li class="fragment">Endless lists</li>
+              <li class="fragment">... or virtual</li>
+            </ul>
           </section>
         </section>
       </div>
