@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/reveal.css" />
-    <link rel="stylesheet" href="css/theme/moon.css" />
+    <link rel="stylesheet" href="css/theme/league.css" />
     <link rel="stylesheet" href="lib/css/monokai.css" />
     <link rel="stylesheet" href="css/reveal-editor.css" />
 
@@ -33,7 +33,7 @@
     <div class="reveal">
       <div class="slides">
         <section data-group="title">
-          <h1>A component a day keeps the doctor away</h1>
+          <h1>A component a 📅 <br />keeps the 👨‍⚕️/👩‍⚕️ away</h1>
         </section>
         <section data-group="intro">
           <section>
@@ -238,6 +238,29 @@ shadow.appendChild(linkElem);</code></pre>
               <span class="fragment">Or better yet, not at all</span>
             </p>
           </section>
+          <section>
+            <h2>🚨 V0 vs V1 🚨</h2>
+          </section>
+          <section>
+            <h3>Web components V0</h3>
+            <ul>
+              <li>Are out-dated</li>
+              <li>Should not be used anymore</li>
+              <li>Only worked in Chrome</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Check if V0 is available</h3>
+            <pre><code class="hljs js">console.log(
+"Native HTML Imports?", 'import' in document.createElement('link'),
+"Native Custom Elements v0?", 'registerElement' in document,
+"Native Shadow DOM v0?", 'createShadowRoot' in document.createElement('div'));</code></pre>
+            <img src="img/v0-enabled.webp" alt="check in browser if V0 APIs are available" />
+          </section>
+          <section>
+            <h3>Deprecation warning when using V0</h3>
+            <img src="img/v0-deprecated-warning.webp" alt="deprecation warning when using V0" />
+          </section>
         </section>
         <section data-group="tools">
           <section>
@@ -264,8 +287,6 @@ shadow.appendChild(linkElem);</code></pre>
             <a href="https://github.com/bauglir/render-plantuml" rel="noopener" target="_blank"
               ><img src="img/render-plantuml-example.webp" alt="API viewer"
             /></a>
-            <br />
-            URL <a href="https://github.com/bauglir/render-plantuml" rel="noopener" target="_blank">https://github.com/bauglir/render-plantuml</a>
           </section>
           <section>
             <h3>api-viewer</h3>
