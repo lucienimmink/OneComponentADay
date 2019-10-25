@@ -146,7 +146,7 @@
             <span class="code-file">File: my-custom-element.js</span>
           </section>
           <section>
-            <p>Customized built-in elements</p>
+            <p>Customize built-in elements</p>
             <pre><code class="hljs js" data-line-numbers>class List extends HTMLULElement {
   // enter code here; but think of the consequences
   // do you really need to extend a built-in element?
@@ -188,6 +188,8 @@ customElements.define('list', List, { extends: "ul" });</code></pre>
             <p>Attach a shadow DOM inside a custom element</p>
             <pre><code class="hljs js" data-line-numbers>const shadow = this.attachShadow({mode: 'open'});</code></pre>
             <span class="code-file">File: my-custom-element.js</span>
+            <p class="fragment small">Open: Elements of the shadow root are accessible from JavaScript outside the root</p>
+            <p class="fragment small">Closed: Denies access to the node(s) of a closed shadow root from JavaScript outside it</p>
           </section>
           <section>
             <p>Now we can create the DOM</p>
