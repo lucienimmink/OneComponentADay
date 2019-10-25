@@ -267,6 +267,51 @@ shadow.appendChild(linkElem);</code></pre>
             <h2>Integrate</h2>
           </section>
           <section>
+            <h3>Angular</h3>
+            <pre><code class="hljs js" data-line-numbers="1,4">import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
+@NgModule({
+  ...,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+})</code></pre>
+            <span class="code-file">File: app.module.ts</span>
+          </section>
+          <section>
+            <h3>Angular - 2</h3>
+            <pre><code class="hljs js">import "album-art-component";</code></pre>
+            <span class="code-file">File: your-angular-component.ts</span>
+          </section>
+          <section>
+            <h3>Angular - 3</h3>
+            <pre><code class="hljs html"><album-art [album]="album.name" [artist]="artist.name"></album-art></code></pre>
+            <span class="code-file">File: your-angular-component.html</span>
+          </section>
+          <section>
+            <h3>React</h3>
+            <pre><code class="hljs js" data-line-numbers="1,5">import "album-art-component";
+class AlbumArt extends React.Component {
+  render() {
+    return (
+      <album-art artist={this.props.artist.name}></album-art>
+    );
+  }
+}</code></pre>
+          </section>
+          <section>
+            <h3>Vue</h3>
+            <pre><code class="hljs js" data-line-numbers>Vue.config.ignoredElements = [/album-art/];</code></pre>
+            <span class="code-file">File: main.js</span>
+          </section>
+          <section>
+            <h3>Vue - 2</h3>
+            <pre><code class="hljs js" data-line-numbers="2,5"><template>
+  <album-art :album="album.name" :artist="artist.name"></album-art>
+</template>
+<script>
+  import "album-art-component";
+</script></code></pre>
+            <span class="code-file">File: your-vue-component.vue</span>
+          </section>
+          <section>
             <h2>Tools</h2>
           </section>
           <section>
