@@ -41,8 +41,9 @@
       });
       if (!s) {
         s = `album-art {
-              display: block;
-              width: 50%;
+              display: inline-block;
+              width: 49%;
+              margin: 0 3px;
           }`;
       }
       return s;
@@ -188,7 +189,8 @@
         $(".editor .output .wrapper.js p").css("font-size", settings.fontSize);
       });
 
-      $(".copy").on("click", function() {
+      $(".copy").on("click", function(este) {
+        console.log(este);
         var $section = $("section.present:not(.stack)"),
           s = $section.find("code").get(0).innerText,
           id = $(".ace.active").attr("id");
