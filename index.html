@@ -24,10 +24,6 @@
     <script src="plugin/jquery.min.js"></script>
     <script src="plugin/ace.js"></script>
     <script src="js/reveal-editor.js"></script>
-    <script type="module">
-      import enableElement from "https://cdn.pika.dev/render-plantuml";
-      enableElement();
-    </script>
   </head>
   <body>
     <div class="reveal">
@@ -37,11 +33,74 @@
         </section>
         <section data-group="intro">
           <section>
-            <blockquote>I have</blockquote>
+            <blockquote>
+              I'd like to display album art <br />
+              Here is my artist and album name
+            </blockquote>
+          </section>
+          <section>
+            <p>A simple statement but it requires some work</p>
+            <ul>
+              <li class="fragment">Fix spelling mistakes</li>
+              <li class="fragment">Find the album art online</li>
+              <li class="fragment">Add caching to sequential calls to the same art</li>
+              <li class="fragment">Optimize the image for the required dimensions</li>
+              <li class="fragment">...</li>
+              <li class="fragment">All without bothering the developer</li>
+            </ul>
+          </section>
+          <section>
+            <p>We can write the logic and present it as a script</p>
+            <pre><code class="hljs js">const albumArt = ({artist, album}) => {
+  // do magic, magic will return an &lt;img&gt; tag
+  return magic;
+}</code></pre>
+            <span class="code-file">File: album-art.js</span>
+          </section>
+          <section>
+            <p>and use that script in a page</p>
+            <pre><code class="hljs html">&lt;script src="//my-domain.example.com/albuma-art.js">&lt;/script>
+
+<div id="art"></div>
+
+&lt;script>
+  (() => {
+    const art = albumArt({artist: 'tool', album: 'fear inoculum'});
+    document.querySelector("#art").innerHTML = art;
+  })();
+&lt;/script>
+</code></pre>
+            <span class="code-file">File: alien-page.html</span>
+          </section>
+          <section>
+            <p>This works, until it becomes to complex</p>
+            <ul>
+              <li class="fragment">Doing a datepicker this way requires a lot of shared knowledge</li>
+              <li class="fragment">Or a lot of copy-pasting</li>
+              <li class="fragment">Who is responsible for the styling?</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Just make it a <span class="code-element">[insert favourite framework here]</span> component!</h2>
+          </section>
+          <section>
+            <h2>... but we use <span class="code-element">[insert other framework here]</span></h2>
+          </section>
+          <section>
+            <blockquote>
+              Have fun rewriting your <span class="code-element">[insert enormous component here]</span> using
+              <span class="code-element">[insert other framework here]</span> <br />
+              <br />
+              I'm off for a 🍺 or 🍻
+            </blockquote>
+            <span class="small fragment">your least favourite co-worker or boss type of person</span>
           </section>
         </section>
-        <section data-background="img/isaac-bg.webp" data-group="ISAAC - Lucien Immink">
-          <section>Lucien Immink, B.Eng</section>
+        <section data-group="ISAAC - Lucien Immink">
+          <section>
+            <h2>Lucien Immink, B.Eng</h2>
+            <span class="fragment small">Hopefully not that least favourite person I was referring to</span>
+          </section>
           <section>
             <img src="img/lucien-square.webp" alt="Lucien Immink, B.Eng" />
           </section>
@@ -406,6 +465,7 @@ class AlbumArt extends React.Component {
               <li class="fragment">Integrate well with modern frameworks</li>
               <li class="fragment">Have multiple tools to build</li>
               <li class="fragment">Have a great future</li>
+              <li class="fragment">Can fetch album-art 🥳🎉</li>
             </ul>
           </section>
         </section>
