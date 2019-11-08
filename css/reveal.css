@@ -1624,6 +1624,10 @@ body {
 /**
 * My own stuff
 **/
+.emoji, form.stacked input.emoji-copy, .search-form__button {
+  font-weight: 400;
+  font-family: apple color emoji,segoe ui emoji,noto color emoji,android emoji,emojisymbols,emojione mozilla,twemoji mozilla,segoe ui symbol; }
+
 .reveal pre + .code-file {
   display: block;
   background: rgba(255, 255, 255, 0.2);

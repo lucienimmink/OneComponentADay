@@ -29,7 +29,7 @@
     <div class="reveal">
       <div class="slides">
         <section data-group="title">
-          <h1>A component a 📅 <br />keeps the 👨‍⚕️/👩‍⚕️ away</h1>
+          <h1><span class="emoji">1️</span> component a 📅 <br />keeps the 👨‍⚕️/👩‍⚕️ away</h1>
         </section>
         <section data-group="intro">
           <section>
@@ -139,10 +139,12 @@
           <section>
             <p>Example template</p>
             <pre><code class="hljs html" data-line-numbers><template id="template">
-  <div class="card-artist">
-    <img class="artist-art" alt="artist" src="img/placeholder.webp">
-    <slot name="title">artist name</slot>
-    <p class="artist-bio"></p>
+  <div class="card card-artist">
+    <img class="card-img-top" alt="artist" src="img/placeholder.webp">
+    <p class="card-body">
+      <slot name="artist">artist name</slot>
+      <slot name="bio">artist bio</slot>
+    </p>
   </div>
 </template></code></pre>
             <span class="code-file">File: some-page.html</span>
@@ -163,9 +165,8 @@
 
   // clone the template and fill in the values
   const clone = document.importNode(template.content, true);
-  clone.querySelector('img').setAttribute('src', url);
-  clone.querySelector('.artist-bio').textContent = bio;
-
+  clone.querySelector('.card-img-top').setAttribute('src', url);
+  ...
   // now we can add it to the DOM
   document.querySelector('body').appendChild(clone);
 }</code></pre>
@@ -219,7 +220,7 @@ customElements.define('list', List, { extends: "ul" });</code></pre>
             <pre><code class="hljs html" data-line-numbers="3-5"><article class="artist-info">
   <p>Lorem ipsizzle get down get down sizzle amizzle</p>
   <album-art artist="2pac">
-    <h2 slot="title">2pac</h2>
+    <h2 slot="artist">2pac</h2>
   </album-art>
   <p>Nullam sapien velizzle, crazy volutpizzle, fo shizzle.</p>
 </article></code></pre>
