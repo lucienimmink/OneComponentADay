@@ -176,7 +176,7 @@
   // clone the template and fill in the values
   const clone = document.importNode(template.content, true);
   clone.querySelector('.card-img-top').setAttribute('src', url);
-  ...
+  // ...
   // now we can add it to the DOM
   document.querySelector('body').appendChild(clone);
 }</code></pre>
@@ -221,20 +221,26 @@
   // enter code here; but think of the consequences
   // do you really need to extend a built-in element?
   // how it that not confusing 🤷
+  // on the other hand, you have your fallback for free 🎉
 };
 customElements.define('list', List, { extends: "ul" });</code></pre>
             <span class="code-file">File: my-custom-built-in-element.js</span>
           </section>
           <section>
             <p>Now we can use it anywhere</p>
-            <pre><code class="hljs html" data-line-numbers="3-5"><article class="artist-info">
-  <p>Lorem ipsizzle get down get down sizzle amizzle</p>
+            <pre><code class="hljs html" data-line-numbers="3-7"><article class="artist-info">
+  <p>Lorem ipsizzle sit down sit down sizzle amizzle</p>
   <album-art artist="2pac">
-    <h2 slot="artist">2pac</h2>
+    <p slot="bio">Crizzle aliquam daahng dawg sure mi.
+      Shut the shizzle up socizzle natoque penatibizzle
+      check it out ma nizzle crazy hizzle</p>
   </album-art>
   <p>Nullam sapien velizzle, crazy volutpizzle, fo shizzle.</p>
 </article></code></pre>
             <span class="code-file">File: alien-page.html</span>
+            <span class="small fragment"
+              >Gangsta loremizzle my ippzle: <a href="http://lorizzle.nl/" target="_blank" rel="noopener">http://lorizzle.nl/</a></span
+            >
           </section>
           <section>
             <h3>Lifecycle callbacks</h3>
@@ -289,7 +295,10 @@ styleElem.textContent = `
   img {
     display: block;
     object-fit: cover;
-}`;
+    width: 100%;
+    height: 100%;
+  }
+`;
 shadow.appendChild(styleElem);</code></pre>
             <span class="code-file">File: my-custom-element.js</span>
           </section>
