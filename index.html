@@ -35,8 +35,16 @@
           <section>
             <blockquote>
               I'd like to display album art <br />
-              Here is my artist and album name
+              Here is my <span class="code-element">artist</span> and <span class="code-element">album name</span>
             </blockquote>
+            <span class="fragment reveal-album">
+              <album-art artist="ayreon"></album-art> <br />
+              Ayreon
+            </span>
+            <span class="fragment reveal-album">
+              <album-art artist="tool" album="aenima"></album-art><br />
+              Tool &bull; Ænima
+            </span>
           </section>
           <section>
             <p>A simple statement but it requires some work</p>
@@ -65,10 +73,9 @@
 <div id="art"></div>
 
 &lt;script>
-  (() => {
-    const art = albumArt({artist: 'tool', album: 'fear inoculum'});
-    document.querySelector("#art").innerHTML = art;
-  })();
+  const art = albumArt({artist: 'tool', album: 'fear inoculum'});
+  document.querySelector("#art").innerHTML = art;
+  // 👊🤐💩💣 ... never trust external HTML
 &lt;/script>
 </code></pre>
             <span class="code-file">File: alien-page.html</span>
@@ -79,6 +86,7 @@
               <li class="fragment">Doing a datepicker this way requires a lot of shared knowledge</li>
               <li class="fragment">Or a lot of copy-pasting</li>
               <li class="fragment">Who is responsible for the styling?</li>
+              <li class="fragment">An <span class="code-element">&lt;iframe&gt;</span> is not always a solution</li>
             </ul>
           </section>
           <section>
@@ -92,7 +100,8 @@
               Have fun rewriting your <span class="code-element">[insert enormous component here]</span> using
               <span class="code-element">[insert other framework here]</span> <br />
               <br />
-              I'm off for a 🍺 or 🍻
+              <span class="fragment">and please use TypeScript! <br /></span>
+              <span class="fragment">I'm off for a 🍺 or 🍻</span>
             </blockquote>
             <span class="small fragment">your least favourite co-worker or boss type of person</span>
           </section>
@@ -476,7 +485,7 @@ class AlbumArt extends React.Component {
     <div class="editor-hook"></div>
 
     <script src="js/reveal.js"></script>
-
+    <script type="module" src="plugin/album-art.js"></script>
     <script>
       Reveal.initialize({
         controls: false,
