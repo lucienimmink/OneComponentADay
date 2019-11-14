@@ -190,7 +190,6 @@
       });
 
       $(".copy").on("click", function(este) {
-        console.log(este);
         var $section = $("section.present:not(.stack)"),
           s = $section.find("code").get(0).innerText,
           id = $(".ace.active").attr("id");

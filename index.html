@@ -52,6 +52,7 @@
           <section>
             <p>We can write the logic and present it as a script</p>
             <pre><code class="hljs js">const albumArt = ({artist, album}) => {
+  let magic;
   // do magic, magic will return an &lt;img&gt; tag
   return magic;
 }</code></pre>
@@ -481,7 +482,10 @@ class AlbumArt extends React.Component {
         controls: false,
         progress: false,
         history: true,
-        dependencies: [{ src: "plugin/notes/notes.js", async: true }, { src: "plugin/highlight/highlight.js", async: true }],
+        dependencies: [
+          { src: "plugin/notes/notes.js", async: true },
+          { src: "plugin/highlight/highlight.js", async: true },
+        ],
       });
 
       $("code").RevealEditor();
