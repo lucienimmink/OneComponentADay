@@ -40,11 +40,16 @@
         s += temp;
       });
       if (!s) {
-        s = `album-art {
-              display: inline-block;
-              width: 49%;
-              margin: 0 3px;
-          }`;
+        s = `
+          album-art {
+            display: inline-block;
+            width: 49%;
+            margin: 0 3px;
+          }
+          * {
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+          }
+        `;
       }
       return s;
     }

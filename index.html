@@ -142,15 +142,15 @@
           </section>
           <section>
             <p>
-              The HTML Content Template (<span class="code-element">&lt;template&gt;</span>) element is a mechanism for holding HTML that is not to be rendered
-              immediately when a page is loaded but may be instantiated subsequently during runtime using JavaScript.
+              The HTML Content <span class="code-element">&lt;template&gt;</span> element is a mechanism for holding HTML that is not to be rendered immediately
+              when a page is loaded but may be instantiated subsequently during runtime using JavaScript.
             </p>
           </section>
           <section>
             <p>Example template</p>
             <pre><code class="hljs html" data-line-numbers><template id="template">
   <div class="card card-artist">
-    <img class="card-img-top" alt="artist" src="img/placeholder.webp">
+    <img class="card-img-top" alt="artist" src="placeholder.webp">
     <p class="card-body">
       <slot name="artist">artist name</slot>
       <slot name="bio">artist bio</slot>
@@ -243,13 +243,19 @@ customElements.define('list', List, { extends: "ul" });</code></pre>
             >
           </section>
           <section>
-            <h3>Lifecycle callbacks</h3>
+            <h2>Lifecycle callbacks</h2>
             <ul>
-              <li class="code-element">connectedCallback</li>
-              <li class="code-element">disconnectedCallback</li>
-              <li class="code-element">adoptedCallback</li>
-              <li class="code-element">attributeChangedCallback</li>
+              <li class="code-element fragment fade-in-then-semi-out">connectedCallback</li>
+              <li class="code-element fragment fade-in-then-semi-out">disconnectedCallback</li>
+              <li class="code-element fragment fade-in-then-semi-out">adoptedCallback</li>
+              <li class="code-element fragment fade-in-then-semi-out">attributeChangedCallback</li>
             </ul>
+            <aside class="notes">
+              <p>connectedCallback: Invoked each time the custom element is appended into a document-connected element.</p>
+              <p>disconnectedCallback: Invoked each time the custom element is disconnected from the document's DOM.</p>
+              <p>adoptedCallback: Invoked each time the custom element is moved to a new document.</p>
+              <p>attributeChangedCallback: Invoked each time one of the custom element's attributes is added, removed, or changed.</p>
+            </aside>
           </section>
           <section>
             <h1>Shadow DOM</h1>
@@ -444,13 +450,19 @@ class AlbumArt extends React.Component {
           </section>
           <section>
             <h3>album-art-component</h3>
-            <pre><code class="hljs html" data-line-numbers=""><album-art artist="the gathering"></album-art>
-<album-art artist="tool" album="fear inoculum"></album-art>
+            <pre><code class="hljs html" data-line-numbers="2-3, 6-14"><div class="grid">
+  <album-art artist="the gathering"></album-art>
+  <album-art artist="tool" album="fear inoculum"></album-art>
+</div>
 <style>
+  .grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-column-gap: 10px;
+  }
   album-art {
-    display: inline-block;
-    width: calc(50% - 3px);
-    margin: 0 3px 0 0;
+    display: block;
+    width: 100%;
   }
 </style></code></pre>
           </section>
