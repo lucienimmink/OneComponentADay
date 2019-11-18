@@ -339,9 +339,13 @@ shadow.appendChild(linkElem);</code></pre>
           <section>
             <h3>Check if V0 is available</h3>
             <pre><code class="hljs js">console.log(
-"Native HTML Imports?", 'import' in document.createElement('link'),
-"Native Custom Elements v0?", 'registerElement' in document,
-"Native Shadow DOM v0?", 'createShadowRoot' in document.createElement('div'));</code></pre>
+"Native HTML Imports?",
+  'import' in document.createElement('link'),
+"Native Custom Elements v0?",
+  'registerElement' in document,
+"Native Shadow DOM v0?",
+  'createShadowRoot' in document.createElement('div')
+);</code></pre>
             <img src="img/v0-enabled.webp" alt="check in browser if V0 APIs are available" />
           </section>
           <section>
@@ -500,6 +504,14 @@ class AlbumArt extends React.Component {
               <li class="fragment">Can fetch album-art 🥳🎉</li>
             </ul>
           </section>
+        </section>
+        <section>
+          <h1>Thank you!</h1>
+          <p class="small">
+            📧 lucien@isaac.nl <br />
+            🐦 lucienimmink <br />
+            🌍 www.isaac.nl
+          </p>
         </section>
       </div>
     </div>
