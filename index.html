@@ -2,7 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
     <title>1 component a day keeps the doctor away</title>
 
@@ -17,7 +20,9 @@
       var link = document.createElement("link");
       link.rel = "stylesheet";
       link.type = "text/css";
-      link.href = window.location.search.match(/print-pdf/gi) ? "css/print/pdf.css" : "css/print/paper.css";
+      link.href = window.location.search.match(/print-pdf/gi)
+        ? "css/print/pdf.css"
+        : "css/print/paper.css";
       document.getElementsByTagName("head")[0].appendChild(link);
     </script>
 
@@ -28,14 +33,15 @@
   <body>
     <div class="reveal">
       <div class="slides">
-        <section data-group="title">
+        <section data-group="title" data-background="#212121">
           <h1>1 component a 📅 <br />keeps the 🩺 away</h1>
         </section>
         <section data-group="intro">
           <section>
             <blockquote>
-              I'd like to display album art <br />
-              Here is my <span class="code-element">artist</span> and <span class="code-element">album name</span>
+              "I'd like to display album art <br />
+              Here is my <span class="code-element">artist</span> and
+              <span class="code-element">album name</span>"
             </blockquote>
             <span class="fragment reveal-album">
               <album-art artist="ayreon"></album-art> <br />
@@ -51,8 +57,12 @@
             <ul>
               <li class="fragment">Fix spelling mistakes</li>
               <li class="fragment">Find the album art online</li>
-              <li class="fragment">Add caching to sequential calls to the same art</li>
-              <li class="fragment">Optimize the image for the required dimensions</li>
+              <li class="fragment">
+                Add caching to sequential calls to the same art
+              </li>
+              <li class="fragment">
+                Optimize the image for the required dimensions
+              </li>
               <li class="fragment">...</li>
               <li class="fragment">All without bothering the developer</li>
             </ul>
@@ -83,33 +93,55 @@
           <section>
             <p>This works, until it becomes to complex</p>
             <ul>
-              <li class="fragment">Doing a datepicker this way requires a lot of shared knowledge</li>
+              <li class="fragment">
+                Doing a datepicker this way requires a lot of shared knowledge
+              </li>
               <li class="fragment">Or a lot of copy-pasting</li>
               <li class="fragment">Who is responsible for the styling?</li>
-              <li class="fragment">An <span class="code-element">&lt;iframe&gt;</span> is not always a solution</li>
+              <li class="fragment">
+                An <span class="code-element">&lt;iframe&gt;</span> is not
+                always a solution
+              </li>
             </ul>
           </section>
           <section>
-            <h2>Just make it a <span class="code-element">[insert favourite framework here]</span> component!</h2>
+            <h2>
+              Just make it a
+              <span class="code-element"
+                >[insert favourite framework here]</span
+              >
+              component!
+            </h2>
           </section>
           <section>
-            <h2>... but we use <span class="code-element">[insert other framework here]</span></h2>
+            <h2>
+              ... but we use
+              <span class="code-element">[insert other framework here]</span>
+            </h2>
           </section>
           <section>
             <blockquote>
-              Have fun rewriting your <span class="code-element">[insert enormous component here]</span> using
-              <span class="code-element">[insert other framework here]</span> <br />
+              Have fun rewriting your
+              <span class="code-element">[insert enormous component here]</span>
+              using
+              <span class="code-element">[insert other framework here]</span>
+              <br />
               <br />
               <span class="fragment">and please use TypeScript! <br /></span>
               <span class="fragment">I'm off for a 🍺 or 🍻</span>
             </blockquote>
-            <span class="small fragment">your least favourite co-worker or boss type of person</span>
+            <span class="small fragment"
+              >your least favourite co-worker or boss type of person</span
+            >
           </section>
         </section>
         <section data-group="ISAAC - Lucien Immink">
-          <section>
+          <section data-background="#212121">
             <h2>Lucien Immink, B.Eng</h2>
-            <span class="fragment small">Hopefully not that least favourite person I was referring to</span>
+            <span class="fragment small"
+              >Hopefully not that least favourite person I was referring
+              to</span
+            >
           </section>
           <section>
             <img src="img/lucien-square.webp" alt="Lucien Immink, B.Eng" />
@@ -133,7 +165,7 @@
           </section>
         </section>
         <section data-group="what-are">
-          <section>
+          <section data-background="#212121">
             <h3>What are web components</h3>
             <img src="img/web-components.webp" alt="Web components" />
           </section>
@@ -141,7 +173,11 @@
             <h1>Templates</h1>
           </section>
           <section>
-            <p>The HTML Content <span class="code-element">&lt;template&gt;</span> element is a mechanism for holding HTML.</p>
+            <p>
+              The HTML Content
+              <span class="code-element">&lt;template&gt;</span> element is a
+              mechanism for holding HTML.
+            </p>
           </section>
           <section>
             <p>Example template</p>
@@ -162,7 +198,8 @@
               No calls will be made to fetch the image. <br />
               No CSS is applied and if you add a script node, <br />
               No code is excecuted.<br />
-              <span class="code-element">&lt;slot&gt;</span> is used as hook to place external HTML
+              <span class="code-element">&lt;slot&gt;</span> is used as hook to
+              place external HTML
             </p>
           </section>
           <section>
@@ -191,8 +228,15 @@
           </section>
           <section>
             <p>
-              The ability to create custom elements that encapsulate your functionality on an HTML page, rather than having to make do with a long, nested batch
-              of elements that together provide a custom page feature
+              The ability to create
+              <span class="fragment highlight-blue">custom elements</span> that
+              encapsulate your
+              <span class="fragment highlight-blue">functionality</span> on an
+              HTML page, rather than having to make do with a
+              <span class="fragment highlight-red"
+                >long, nested batch of elements</span
+              >
+              that together provide a custom page feature
             </p>
           </section>
           <section>
@@ -236,29 +280,56 @@ customElements.define('list', List, { extends: "ul" });</code></pre>
 </article></code></pre>
             <span class="code-file">File: alien-page.html</span>
             <span class="small fragment"
-              >Gangsta loremizzle my ippzle: <a href="http://lorizzle.nl/" target="_blank" rel="noopener">http://lorizzle.nl/</a></span
+              >Gangsta loremizzle my ippzle:
+              <a href="http://lorizzle.nl/" target="_blank" rel="noopener"
+                >http://lorizzle.nl/</a
+              ></span
             >
           </section>
           <section>
             <h2>Lifecycle callbacks</h2>
             <ul>
-              <li class="code-element fragment fade-in-then-semi-out">connectedCallback</li>
-              <li class="code-element fragment fade-in-then-semi-out">disconnectedCallback</li>
-              <li class="code-element fragment fade-in-then-semi-out">adoptedCallback</li>
-              <li class="code-element fragment fade-in-then-semi-out">attributeChangedCallback</li>
+              <li class="code-element fragment fade-in-then-semi-out">
+                connectedCallback
+              </li>
+              <li class="code-element fragment fade-in-then-semi-out">
+                disconnectedCallback
+              </li>
+              <li class="code-element fragment fade-in-then-semi-out">
+                adoptedCallback
+              </li>
+              <li class="code-element fragment fade-in-then-semi-out">
+                attributeChangedCallback
+              </li>
             </ul>
             <aside class="notes">
-              <p>connectedCallback: Invoked each time the custom element is appended into a document-connected element.</p>
-              <p>disconnectedCallback: Invoked each time the custom element is disconnected from the document's DOM.</p>
-              <p>adoptedCallback: Invoked each time the custom element is moved to a new document.</p>
-              <p>attributeChangedCallback: Invoked each time one of the custom element's attributes is added, removed, or changed.</p>
+              <p>
+                connectedCallback: Invoked each time the custom element is
+                appended into a document-connected element.
+              </p>
+              <p>
+                disconnectedCallback: Invoked each time the custom element is
+                disconnected from the document's DOM.
+              </p>
+              <p>
+                adoptedCallback: Invoked each time the custom element is moved
+                to a new document.
+              </p>
+              <p>
+                attributeChangedCallback: Invoked each time one of the custom
+                element's attributes is added, removed, or changed.
+              </p>
             </aside>
           </section>
           <section>
             <h1>Shadow DOM</h1>
           </section>
           <section>
-            <p>Shadow DOM allows hidden DOM trees to be attached to elements in the regular DOM tree</p>
+            <p>
+              Shadow DOM allows
+              <span class="fragment highlight-blue">hidden DOM trees</span> to
+              be attached to elements in the regular DOM tree
+            </p>
           </section>
           <section>
             <img src="img/shadow-dom.webp" alt="shadow dom explanation" />
@@ -267,8 +338,14 @@ customElements.define('list', List, { extends: "ul" });</code></pre>
             <p>Attach a shadow DOM inside a custom element</p>
             <pre><code class="hljs js" data-line-numbers>const shadow = this.attachShadow({mode: 'open'});</code></pre>
             <span class="code-file">File: my-custom-element.js</span>
-            <p class="fragment small">Open: Elements of the shadow root are accessible from JavaScript outside the root</p>
-            <p class="fragment small">Closed: Denies access to the node(s) of a closed shadow root from JavaScript outside it</p>
+            <p class="fragment small">
+              Open: Elements of the shadow root are accessible from JavaScript
+              outside the root
+            </p>
+            <p class="fragment small">
+              Closed: Denies access to the node(s) of a closed shadow root from
+              JavaScript outside it
+            </p>
           </section>
           <section>
             <p>Now we can create the DOM</p>
@@ -318,7 +395,9 @@ shadow.appendChild(linkElem);</code></pre>
             <p class="warn">
               Please pay attention if you load CSS this way <br />
               What is the URL? 🤔 <br />
-              <span class="fragment">Only use <strong>Absolute URIs</strong> <br /></span>
+              <span class="fragment"
+                >Only use <strong>Absolute URIs</strong> <br
+              /></span>
               <span class="fragment">Or better yet, not at all</span>
             </p>
           </section>
@@ -334,7 +413,7 @@ shadow.appendChild(linkElem);</code></pre>
             </ul>
           </section>
           <section>
-            <h3>Check if V0 is available</h3>
+            <h3>Check if V.0 is available</h3>
             <pre><code class="hljs js">console.log(
 "Native HTML Imports?",
   'import' in document.createElement('link'),
@@ -343,15 +422,21 @@ shadow.appendChild(linkElem);</code></pre>
 "Native Shadow DOM v0?",
   'createShadowRoot' in document.createElement('div')
 );</code></pre>
-            <img src="img/v0-enabled.webp" alt="check in browser if V0 APIs are available" />
+            <img
+              src="img/v0-enabled.webp"
+              alt="check in browser if V0 APIs are available"
+            />
           </section>
           <section>
-            <h3>Deprecation warning when using V0</h3>
-            <img src="img/v0-deprecated-warning.webp" alt="deprecation warning when using V0" />
+            <h3>Deprecation warning when using V.0</h3>
+            <img
+              src="img/v0-deprecated-warning.webp"
+              alt="deprecation warning when using V0"
+            />
           </section>
         </section>
         <section data-group="integrate">
-          <section>
+          <section data-background="#212121">
             <h2>Integrate</h2>
           </section>
           <section>
@@ -412,7 +497,7 @@ class AlbumArt extends React.Component {
           </section>
         </section>
         <section data-group="examples">
-          <section>
+          <section data-background="#212121">
             <h2>Some examples</h2>
           </section>
           <section>
@@ -420,22 +505,33 @@ class AlbumArt extends React.Component {
             <pre><code class="hljs html" data-line-numbers><render-plantuml server="https://some-server">
   Actor -> "Actor 2" : Hooray an example!
 </render-plantuml></code></pre>
-            <a href="https://github.com/bauglir/render-plantuml" rel="noopener" target="_blank"
+            <a
+              href="https://github.com/bauglir/render-plantuml"
+              rel="noopener"
+              target="_blank"
               ><img src="img/render-plantuml-example.webp" alt="API viewer"
             /></a>
           </section>
           <section>
             <h3>api-viewer</h3>
             <pre><code class="hljs html" data-line-numbers><api-viewer src="./custom-elements.json"></api-viewer></code></pre>
-            <a href="https://github.com/web-padawan/api-viewer-element" rel="noopener" target="_blank"
+            <a
+              href="https://github.com/web-padawan/api-viewer-element"
+              rel="noopener"
+              target="_blank"
               ><img src="img/api-viewer-screenshot.webp" alt="API viewer"
             /></a>
           </section>
           <section>
             <h3>vaadin-date-picker</h3>
             <pre><code class="hljs html" data-line-numbers><vaadin-date-picker label="Birthday" value="1980-08-14"></vaadin-date-picker></code></pre>
-            <a href="https://vaadin.com/components/vaadin-date-picker/html-examples" rel="noopener" target="_blank"
-              ><img src="img/vaadin-date-picker-screenshot.webp" alt="vaading date-picker"
+            <a
+              href="https://vaadin.com/components/vaadin-date-picker/html-examples"
+              rel="noopener"
+              target="_blank"
+              ><img
+                src="img/vaadin-date-picker-screenshot.webp"
+                alt="vaading date-picker"
             /></a>
           </section>
           <section>
@@ -469,7 +565,7 @@ class AlbumArt extends React.Component {
           </section>
         </section>
         <section data-group="closing-thoughts">
-          <section>
+          <section data-background="#212121">
             <h2>And so it's come to this</h2>
           </section>
           <section>
@@ -477,15 +573,23 @@ class AlbumArt extends React.Component {
   <album-art artist="the gathering"></album-art>
   <album-art artist="tool" album="fear inoculum"></album-art>
 </div></code></pre>
-            <p class="fragment">APIs to create new custom, reusable HTML tags</p>
-            <p class="fragment">With controlled style and function that cannot leak</p>
+            <p class="fragment">
+              APIs to create new custom, reusable HTML tags
+            </p>
+            <p class="fragment">
+              With controlled style and function that cannot leak
+            </p>
           </section>
           <section>
             <p>
-              Custom components build on the Web Component standards, will work across
-              <span class="fragment highlight-blue">modern browsers</span>, and can be used with
-              <span class="fragment highlight-blue">any JavaScript library or framework</span> that works with
-              <span class="fragment highlight-blue">HTML</span>.
+              Custom components build on the Web Component standards, will work
+              across
+              <span class="fragment highlight-blue">modern browsers</span>, and
+              can be used with
+              <span class="fragment highlight-blue"
+                >any JavaScript library or framework</span
+              >
+              that works with <span class="fragment highlight-blue">HTML</span>.
             </p>
           </section>
           <section>
@@ -506,7 +610,7 @@ class AlbumArt extends React.Component {
             </ul>
           </section>
         </section>
-        <section>
+        <section data-background="#212121">
           <h1>Thank you!</h1>
           <p class="small">
             📧 lucien@isaac.nl <br />
@@ -527,8 +631,8 @@ class AlbumArt extends React.Component {
         history: true,
         dependencies: [
           { src: "plugin/notes/notes.js", async: true },
-          { src: "plugin/highlight/highlight.js", async: true },
-        ],
+          { src: "plugin/highlight/highlight.js", async: true }
+        ]
       });
 
       $("code").RevealEditor();
