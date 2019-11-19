@@ -1818,6 +1818,22 @@ form.stacked input.emoji-copy,
     position: absolute;
   }
 }
+.reveal .success {
+  padding: 2rem 5rem 2rem 8rem;
+  background: rgba(64, 255, 64, 0.65);
+  color: black;
+  text-align: left;
+  border-left: 15px solid rgb(0, 255, 0);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+  &:before {
+    content: "✔️";
+    font-size: 3rem;
+    display: inline-block;
+    margin-left: -6rem;
+    width: 4rem;
+    position: absolute;
+  }
+}
 .reveal .code-element {
   color: #f92672;
 }

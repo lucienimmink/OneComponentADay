@@ -141,10 +141,7 @@
             <h1>Templates</h1>
           </section>
           <section>
-            <p>
-              The HTML Content <span class="code-element">&lt;template&gt;</span> element is a mechanism for holding HTML that is not to be rendered immediately
-              when a page is loaded but may be instantiated subsequently during runtime using JavaScript.
-            </p>
+            <p>The HTML Content <span class="code-element">&lt;template&gt;</span> element is a mechanism for holding HTML.</p>
           </section>
           <section>
             <p>Example template</p>
@@ -183,7 +180,7 @@
             <span class="code-file">File: some-script.js</span>
           </section>
           <section>
-            <p class="warn">
+            <p class="success">
               Once added to live DOM the image is fetched <br />
               CSS is applied to the nodes <br />
               The script(s) are excecuted.
@@ -326,14 +323,14 @@ shadow.appendChild(linkElem);</code></pre>
             </p>
           </section>
           <section>
-            <h2>🚨 V0 vs V1 🚨</h2>
+            <h2>🚨 V.0 vs V.1 🚨</h2>
           </section>
           <section>
-            <h3>Web components V0</h3>
+            <h3>Web components V.0</h3>
             <ul>
-              <li>Are out-dated</li>
-              <li>Should not be used anymore</li>
-              <li>Only worked in Chrome</li>
+              <li class="fragment">Are out-dated</li>
+              <li class="fragment">Should not be used anymore</li>
+              <li class="fragment">Only worked in Chrome</li>
             </ul>
           </section>
           <section>
@@ -476,15 +473,19 @@ class AlbumArt extends React.Component {
             <h2>And so it's come to this</h2>
           </section>
           <section>
-            <p>
-              Web components are a set of web platform APIs that allow you to create new custom, reusable, encapsulated HTML tags to use in web pages and web
-              apps.
-            </p>
+            <pre><code class="hljs html" data-line-numbers="2-3"><div class="grid">
+  <album-art artist="the gathering"></album-art>
+  <album-art artist="tool" album="fear inoculum"></album-art>
+</div></code></pre>
+            <p class="fragment">APIs to create new custom, reusable HTML tags</p>
+            <p class="fragment">With controlled style and function that cannot leak</p>
           </section>
           <section>
             <p>
-              Custom components and widgets build on the Web Component standards, will work across modern browsers, and can be used with any JavaScript library
-              or framework that works with HTML.
+              Custom components build on the Web Component standards, will work across
+              <span class="fragment highlight-blue">modern browsers</span>, and can be used with
+              <span class="fragment highlight-blue">any JavaScript library or framework</span> that works with
+              <span class="fragment highlight-blue">HTML</span>.
             </p>
           </section>
           <section>
