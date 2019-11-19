@@ -53,9 +53,8 @@
             </span>
           </section>
           <section>
-            <p>A simple statement but it requires some work</p>
+            <h3>A simple statement but it requires some work</h3>
             <ul>
-              <li class="fragment">Fix spelling mistakes</li>
               <li class="fragment">Find the album art online</li>
               <li class="fragment">
                 Add caching to sequential calls to the same art
@@ -91,7 +90,7 @@
             <span class="code-file">File: alien-page.html</span>
           </section>
           <section>
-            <p>This works, until it becomes to complex</p>
+            <h3>This works, until it becomes too complex</h3>
             <ul>
               <li class="fragment">
                 Doing a datepicker this way requires a lot of shared knowledge
@@ -121,14 +120,14 @@
           </section>
           <section>
             <blockquote>
-              Have fun rewriting your
+              "Have fun rewriting your
               <span class="code-element">[insert enormous component here]</span>
               using
-              <span class="code-element">[insert other framework here]</span>
+              <span class="code-element">[insert other framework here]</span>"
               <br />
               <br />
-              <span class="fragment">and please use TypeScript! <br /></span>
-              <span class="fragment">I'm off for a 🍺 or 🍻</span>
+              <span class="fragment">"... and please use TypeScript!"<br /></span>
+              <span class="fragment">"I'm off for a 🍺 or 🍻"</span>
             </blockquote>
             <span class="small fragment"
               >your least favourite co-worker or boss type of person</span
@@ -147,7 +146,7 @@
             <img src="img/lucien-square.webp" alt="Lucien Immink, B.Eng" />
           </section>
           <section>
-            Software Architect<br />
+            Software Architect &amp; <br />
             Web Evangelist<br />
             @ <em>ISAAC</em>
           </section>
@@ -166,7 +165,7 @@
         </section>
         <section data-group="what-are">
           <section data-background="#212121">
-            <h3>What are web components</h3>
+            <h3>Web components</h3>
             <img src="img/web-components.webp" alt="Web components" />
           </section>
           <section>
@@ -180,7 +179,7 @@
             </p>
           </section>
           <section>
-            <p>Example template</p>
+            <h3>Example template</h3>
             <pre><code class="hljs html" data-line-numbers><template id="template">
   <div class="card card-artist">
     <img class="card-img-top" alt="artist" src="placeholder.webp">
@@ -196,14 +195,12 @@
             <p class="warn">
               This DOM is not live.<br />
               No calls will be made to fetch the image. <br />
-              No CSS is applied and if you add a script node, <br />
-              No code is excecuted.<br />
-              <span class="code-element">&lt;slot&gt;</span> is used as hook to
-              place external HTML
+              No CSS is applied.<br />
+              No script is excecuted.
             </p>
           </section>
           <section>
-            <p>Use JavaScript to use the template</p>
+            <h3>Use JavaScript to use the template</h3>
             <pre><code class="hljs js" data-line-numbers>if ('content' in document.createElement('template')) {
   const template = document.querySelector('#template');
 
@@ -218,9 +215,9 @@
           </section>
           <section>
             <p class="success">
-              Once added to live DOM the image is fetched <br />
+              Once added the image is fetched <br />
               CSS is applied to the nodes <br />
-              The script(s) are excecuted.
+              Script is excecuted.
             </p>
           </section>
           <section>
@@ -236,11 +233,11 @@
               <span class="fragment highlight-red"
                 >long, nested batch of elements</span
               >
-              that together provide a custom page feature
+              that together provide a custom page feature.
             </p>
           </section>
           <section>
-            <p>Create custom element by extending an HTML element</p>
+            <h3>Create custom element by extending HTML element</h3>
             <pre><code class="hljs js" data-line-numbers>class AlbumArt extends HTMLElement {
   constructor() {
     // Always call super first
@@ -252,12 +249,12 @@
             <span class="code-file">File: my-custom-element.js</span>
           </section>
           <section>
-            <p>Registering the element is a one-liner</p>
+            <h3>Registering the element is a one-liner</h3>
             <pre><code class="hljs js" data-line-numbers>customElements.define('album-art', AlbumArt);</code></pre>
             <span class="code-file">File: my-custom-element.js</span>
           </section>
           <section>
-            <p>Customize built-in elements</p>
+            <h3>Customize built-in elements</h3>
             <pre><code class="hljs js" data-line-numbers>class List extends HTMLULElement {
   // enter code here; but think of the consequences
   // do you really need to extend a built-in element?
@@ -268,7 +265,7 @@ customElements.define('list', List, { extends: "ul" });</code></pre>
             <span class="code-file">File: my-custom-built-in-element.js</span>
           </section>
           <section>
-            <p>Now we can use it anywhere</p>
+            <h3>Now we can use it anywhere</h3>
             <pre><code class="hljs html" data-line-numbers="3-7"><article class="artist-info">
   <p>Lorem ipsizzle sit down sit down sizzle amizzle</p>
   <album-art artist="2pac">
@@ -328,14 +325,14 @@ customElements.define('list', List, { extends: "ul" });</code></pre>
             <p>
               Shadow DOM allows
               <span class="fragment highlight-blue">hidden DOM trees</span> to
-              be attached to elements in the regular DOM tree
+              be attached to elements in the regular DOM tree.
             </p>
           </section>
           <section>
             <img src="img/shadow-dom.webp" alt="shadow dom explanation" />
           </section>
           <section>
-            <p>Attach a shadow DOM inside a custom element</p>
+            <h3>Attach a shadow DOM inside a custom element</h3>
             <pre><code class="hljs js" data-line-numbers>const shadow = this.attachShadow({mode: 'open'});</code></pre>
             <span class="code-file">File: my-custom-element.js</span>
             <p class="fragment small">
@@ -348,7 +345,7 @@ customElements.define('list', List, { extends: "ul" });</code></pre>
             </p>
           </section>
           <section>
-            <p>Now we can create the DOM</p>
+            <h3>Now we can create the DOM</h3>
             <pre><code class="hljs js" data-line-numbers>const wrapper = document.createElement('div');
 wrapper.classList.add('wrapper');
 const image = document.createElement('img');
@@ -366,7 +363,7 @@ shadow.appendChild(wrapper);</code></pre>
             <span class="code-file">File: my-custom-element.js</span>
           </section>
           <section>
-            <p>and add styling to it by using CSS</p>
+            <h3>and add styling to it by using CSS</h3>
             <pre><code class="hljs js" data-line-numbers>const styleElem = document.createElement('style');
 styleElem.textContent = `
   .wrapper {
@@ -383,7 +380,7 @@ shadow.appendChild(styleElem);</code></pre>
             <span class="code-file">File: my-custom-element.js</span>
           </section>
           <section>
-            <p>Which could also be external</p>
+            <h3>Which could also be external</h3>
             <pre><code class="hljs js" data-line-numbers>const linkElem = document.createElement('link');
 linkElem.setAttribute('rel', 'stylesheet');
 linkElem.setAttribute('href', 'style.css');
@@ -402,37 +399,15 @@ shadow.appendChild(linkElem);</code></pre>
             </p>
           </section>
           <section>
-            <h2>🚨 V.0 vs V.1 🚨</h2>
+            <h2>🚨 V0 <span style="text-transform: lowercase;">versus</span> V1 🚨</h2>
           </section>
           <section>
-            <h3>Web components V.0</h3>
+            <h3>Web components V0</h3>
             <ul>
               <li class="fragment">Are out-dated</li>
-              <li class="fragment">Should not be used anymore</li>
               <li class="fragment">Only worked in Chrome</li>
+              <li class="fragment">Should not be used anymore</li>
             </ul>
-          </section>
-          <section>
-            <h3>Check if V.0 is available</h3>
-            <pre><code class="hljs js">console.log(
-"Native HTML Imports?",
-  'import' in document.createElement('link'),
-"Native Custom Elements v0?",
-  'registerElement' in document,
-"Native Shadow DOM v0?",
-  'createShadowRoot' in document.createElement('div')
-);</code></pre>
-            <img
-              src="img/v0-enabled.webp"
-              alt="check in browser if V0 APIs are available"
-            />
-          </section>
-          <section>
-            <h3>Deprecation warning when using V.0</h3>
-            <img
-              src="img/v0-deprecated-warning.webp"
-              alt="deprecation warning when using V0"
-            />
           </section>
         </section>
         <section data-group="integrate">
@@ -486,13 +461,12 @@ class AlbumArt extends React.Component {
           </section>
           <section>
             <h2>Tools</h2>
-          </section>
-          <section>
-            <p>Multiple libraries are available, some but not all:</p>
             <ul>
-              <li>Polymer</li>
               <li>LitElement</li>
               <li>Stencil.js</li>
+              <li>Polymer</li>
+              <li>Skate.js</li>
+              <li>Slim.js</li>
             </ul>
           </section>
         </section>
@@ -535,14 +509,13 @@ class AlbumArt extends React.Component {
             /></a>
           </section>
           <section>
-            <h3>Utilitie components</h3>
+            <h3>utility components</h3>
             <ul>
-              <li>grid</li>
-              <li class="fragment">modal</li>
-              <li class="fragment">take-over</li>
-              <li class="fragment">wizards</li>
+              <li class="fragment">Grid</li>
+              <li class="fragment">Modal</li>
+              <li class="fragment">Wizards</li>
+              <li class="fragment">Take-over</li>
               <li class="fragment">Endless lists</li>
-              <li class="fragment">... or virtual</li>
             </ul>
           </section>
           <section>
@@ -569,6 +542,7 @@ class AlbumArt extends React.Component {
             <h2>And so it's come to this</h2>
           </section>
           <section>
+            <h3>Web components</h3>
             <pre><code class="hljs html" data-line-numbers="2-3"><div class="grid">
   <album-art artist="the gathering"></album-art>
   <album-art artist="tool" album="fear inoculum"></album-art>
