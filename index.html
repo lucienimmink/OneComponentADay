@@ -39,9 +39,9 @@
         <section data-group="intro">
           <section>
             <blockquote>
-              "I'd like to display album art <br />
+              "I'd like to display album art. <br />
               Here is my <span class="code-element">artist</span> and
-              <span class="code-element">album name</span>"
+              <span class="code-element">album name</span>."
             </blockquote>
             <span class="fragment reveal-album">
               <album-art artist="ayreon"></album-art> <br />
@@ -67,7 +67,7 @@
             </ul>
           </section>
           <section>
-            <p>We can write the logic and present it as a script</p>
+            <h3>We can write the logic and present it as a script</h3>
             <pre><code class="hljs js">const albumArt = ({artist, album}) => {
   let magic;
   // do magic, magic will return an &lt;img&gt; tag
@@ -76,7 +76,7 @@
             <span class="code-file">File: album-art.js</span>
           </section>
           <section>
-            <p>and use that script in a page</p>
+            <h3>and use that script in a page</h3>
             <pre><code class="hljs html">&lt;script src="//my-domain.example.com/albuma-art.js">&lt;/script>
 
 <div id="art"></div>
@@ -90,10 +90,10 @@
             <span class="code-file">File: alien-page.html</span>
           </section>
           <section>
-            <h3>This works, until it becomes too complex</h3>
+            <h3>This works ... until it becomes too complex</h3>
             <ul>
               <li class="fragment">
-                Doing a datepicker this way requires a lot of shared knowledge
+                It requires a lot of shared knowledge
               </li>
               <li class="fragment">Or a lot of copy-pasting</li>
               <li class="fragment">Who is responsible for the styling?</li>
@@ -126,11 +126,13 @@
               <span class="code-element">[insert other framework here]</span>"
               <br />
               <br />
-              <span class="fragment">"... and please use TypeScript!"<br /></span>
-              <span class="fragment">"I'm off for a 🍺 or 🍻"</span>
+              <span class="fragment"
+                >"... and please use TypeScript!"<br
+              /></span>
+              <span class="fragment">"I'm off for a 🍺 or 🍻."</span>
             </blockquote>
             <span class="small fragment"
-              >your least favourite co-worker or boss type of person</span
+              >- your least favourite co-worker or boss type of person</span
             >
           </section>
         </section>
@@ -138,8 +140,7 @@
           <section data-background="#212121">
             <h2>Lucien Immink, B.Eng</h2>
             <span class="fragment small"
-              >Hopefully not that least favourite person I was referring
-              to</span
+              >Hopefully not that least favourite person</span
             >
           </section>
           <section>
@@ -173,7 +174,7 @@
           </section>
           <section>
             <p>
-              The HTML Content
+              The HTML content
               <span class="code-element">&lt;template&gt;</span> element is a
               mechanism for holding HTML.
             </p>
@@ -215,8 +216,8 @@
           </section>
           <section>
             <p class="success">
-              Once added the image is fetched <br />
-              CSS is applied to the nodes <br />
+              Once added the image is fetched. <br />
+              CSS is applied to the nodes. <br />
               Script is excecuted.
             </p>
           </section>
@@ -265,7 +266,7 @@ customElements.define('list', List, { extends: "ul" });</code></pre>
             <span class="code-file">File: my-custom-built-in-element.js</span>
           </section>
           <section>
-            <h3>Now we can use it anywhere</h3>
+            <h3>Use them anywhere</h3>
             <pre><code class="hljs html" data-line-numbers="3-7"><article class="artist-info">
   <p>Lorem ipsizzle sit down sit down sizzle amizzle</p>
   <album-art artist="2pac">
@@ -335,17 +336,18 @@ customElements.define('list', List, { extends: "ul" });</code></pre>
             <h3>Attach a shadow DOM inside a custom element</h3>
             <pre><code class="hljs js" data-line-numbers>const shadow = this.attachShadow({mode: 'open'});</code></pre>
             <span class="code-file">File: my-custom-element.js</span>
+            <!-- TODO: andere zinnen van maken -->
             <p class="fragment small">
               Open: Elements of the shadow root are accessible from JavaScript
-              outside the root
+              outside the root.
             </p>
             <p class="fragment small">
               Closed: Denies access to the node(s) of a closed shadow root from
-              JavaScript outside it
+              JavaScript outside it.
             </p>
           </section>
           <section>
-            <h3>Now we can create the DOM</h3>
+            <h3>Create the shadow DOM</h3>
             <pre><code class="hljs js" data-line-numbers>const wrapper = document.createElement('div');
 wrapper.classList.add('wrapper');
 const image = document.createElement('img');
@@ -363,7 +365,7 @@ shadow.appendChild(wrapper);</code></pre>
             <span class="code-file">File: my-custom-element.js</span>
           </section>
           <section>
-            <h3>and add styling to it by using CSS</h3>
+            <h3>and add styling</h3>
             <pre><code class="hljs js" data-line-numbers>const styleElem = document.createElement('style');
 styleElem.textContent = `
   .wrapper {
@@ -390,21 +392,25 @@ shadow.appendChild(linkElem);</code></pre>
           </section>
           <section>
             <p class="warn">
-              Please pay attention if you load CSS this way <br />
+              Please pay attention if you use external CSS. <br />
               What is the URL? 🤔 <br />
               <span class="fragment"
-                >Only use <strong>Absolute URIs</strong> <br
+                >Only use <strong>Absolute URIs</strong>. <br
               /></span>
-              <span class="fragment">Or better yet, not at all</span>
+              <span class="fragment"
+                >Or better yet: don't use external CSS.</span
+              >
             </p>
           </section>
           <section>
-            <h2>🚨 V0 <span style="text-transform: lowercase;">versus</span> V1 🚨</h2>
+            <h2>
+              🚨 V0 <span style="text-transform: lowercase;">versus</span> V1 🚨
+            </h2>
           </section>
           <section>
             <h3>Web components V0</h3>
             <ul>
-              <li class="fragment">Are out-dated</li>
+              <li class="fragment">Are outdated</li>
               <li class="fragment">Only worked in Chrome</li>
               <li class="fragment">Should not be used anymore</li>
             </ul>
@@ -519,7 +525,7 @@ class AlbumArt extends React.Component {
             </ul>
           </section>
           <section>
-            <h3>album-art-component</h3>
+            <h3>album-art</h3>
             <pre><code class="hljs html" data-line-numbers="2-3, 11-14"><div class="grid">
   <album-art artist="the gathering"></album-art>
   <album-art artist="tool" album="fear inoculum"></album-art>
@@ -551,14 +557,14 @@ class AlbumArt extends React.Component {
               APIs to create new custom, reusable HTML tags
             </p>
             <p class="fragment">
-              With controlled style and function that cannot leak
+              with controlled style and function that cannot leak.
             </p>
           </section>
           <section>
             <p>
-              Custom components build on the Web Component standards, will work
+              Custom components built on the Web Component standards will work
               across
-              <span class="fragment highlight-blue">modern browsers</span>, and
+              <span class="fragment highlight-blue">modern browsers</span> and
               can be used with
               <span class="fragment highlight-blue"
                 >any JavaScript library or framework</span
@@ -575,12 +581,12 @@ class AlbumArt extends React.Component {
             </ul>
           </section>
           <section>
-            <h3>Web components do</h3>
+            <h3>Web components</h3>
             <ul>
               <li class="fragment">Integrate well with modern frameworks</li>
-              <li class="fragment">Have multiple tools to build</li>
+              <li class="fragment">Have multiple libraries</li>
               <li class="fragment">Have a great future</li>
-              <li class="fragment">Can fetch album-art 🥳🎉</li>
+              <li class="fragment">Can fetch album art 🥳🎉</li>
             </ul>
           </section>
         </section>
