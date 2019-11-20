@@ -181,7 +181,7 @@
           </section>
           <section>
             <h3>Example template</h3>
-            <pre><code class="hljs html" data-line-numbers><template id="template">
+            <pre><code class="hljs html" data-line-numbers="1,5,6,9"><template id="template">
   <div class="card card-artist">
     <img class="card-img-top" alt="artist" src="placeholder.webp">
     <p class="card-body">
@@ -191,6 +191,11 @@
   </div>
 </template></code></pre>
             <span class="code-file">File: some-page.html</span>
+            <aside class="notes">
+              &lt;slot&gt; is a placeholder inside a web component that you can
+              fill with your own markup, which lets you create separate DOM
+              trees and present them together.
+            </aside>
           </section>
           <section>
             <p class="warn">
@@ -264,6 +269,8 @@
 };
 customElements.define('list', List, { extends: "ul" });</code></pre>
             <span class="code-file">File: my-custom-built-in-element.js</span>
+            <pre><code class="hljs html" data-line-numbers><ul is="list"></ul></code></pre>
+            <span class="code-file">File: my-custom-build-in-page.html</span>
           </section>
           <section>
             <h3>Use them anywhere</h3>
@@ -311,7 +318,7 @@ customElements.define('list', List, { extends: "ul" });</code></pre>
               </p>
               <p>
                 adoptedCallback: Invoked each time the custom element is moved
-                to a new document.
+                to a new document. example: move element between iframes.
               </p>
               <p>
                 attributeChangedCallback: Invoked each time one of the custom
@@ -466,14 +473,24 @@ class AlbumArt extends React.Component {
             <span class="code-file">File: your-vue-component.vue</span>
           </section>
           <section>
-            <h2>Tools</h2>
+            <h2>Libraries</h2>
             <ul>
               <li>LitElement</li>
               <li>Stencil.js</li>
               <li>Polymer</li>
               <li>Skate.js</li>
-              <li>Slim.js</li>
+              <li>... and many more</li>
             </ul>
+            <aside class="notes">
+              All of these libraries will help you to be more productive. They
+              help in setting up and deploying the elements but all with a
+              different approach. <br />Polymer is shifting to LitElement which
+              uses the power of string literals, Jad will go into much more
+              detail later on today. <br />Stencil originates from the ionic
+              framework and can build both single elements or a component
+              library while having little overhead. <br />Skate can be used with
+              react, lit or preact as render layer.
+            </aside>
           </section>
         </section>
         <section data-group="examples">
@@ -491,6 +508,10 @@ class AlbumArt extends React.Component {
               target="_blank"
               ><img src="img/render-plantuml-example.webp" alt="API viewer"
             /></a>
+            <aside class="notes">
+              The image is automaticly updated when the source of the UML
+              diagram changes. The image stays up 2 date.
+            </aside>
           </section>
           <section>
             <h3>api-viewer</h3>
@@ -501,18 +522,13 @@ class AlbumArt extends React.Component {
               target="_blank"
               ><img src="img/api-viewer-screenshot.webp" alt="API viewer"
             /></a>
-          </section>
-          <section>
-            <h3>vaadin-date-picker</h3>
-            <pre><code class="hljs html" data-line-numbers><vaadin-date-picker label="Birthday" value="1980-08-14"></vaadin-date-picker></code></pre>
-            <a
-              href="https://vaadin.com/components/vaadin-date-picker/html-examples"
-              rel="noopener"
-              target="_blank"
-              ><img
-                src="img/vaadin-date-picker-screenshot.webp"
-                alt="vaading date-picker"
-            /></a>
+            <aside class="notes">
+              Note that by using stencil.js for example you get the
+              custom-elements.json for free; this custom element uses that
+              information to create a readable and browseable API documentation
+              module for your custom elements while the documentation stays up 2
+              date since it is automaticly generated.
+            </aside>
           </section>
           <section>
             <h3>utility components</h3>
@@ -523,6 +539,10 @@ class AlbumArt extends React.Component {
               <li class="fragment">Take-over</li>
               <li class="fragment">Endless lists</li>
             </ul>
+            <aside class="notes">
+              Besides functional elements you can also create utility elements
+              to help out CMS users.
+            </aside>
           </section>
           <section>
             <h3>album-art</h3>
@@ -541,6 +561,11 @@ class AlbumArt extends React.Component {
     width: 100%;
   }
 </style></code></pre>
+            <aside class="notes">
+              And of course we have album art! Play with it by clicking on the
+              code and changing the names to your favourite artist and albums.
+              This shows what the attributeChangedCallback is used for.
+            </aside>
           </section>
         </section>
         <section data-group="closing-thoughts">
@@ -557,7 +582,7 @@ class AlbumArt extends React.Component {
               APIs to create new custom, reusable HTML tags
             </p>
             <p class="fragment">
-              with controlled style and function that cannot leak.
+              with controlled style and markup that cannot leak.
             </p>
           </section>
           <section>
@@ -565,9 +590,9 @@ class AlbumArt extends React.Component {
               Custom components built on the Web Component standards will work
               across
               <span class="fragment highlight-blue">modern browsers</span> and
-              can be used with
+              can be used with any
               <span class="fragment highlight-blue"
-                >any JavaScript library or framework</span
+                >JavaScript library or framework</span
               >
               that works with <span class="fragment highlight-blue">HTML</span>.
             </p>
