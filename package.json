@@ -8,7 +8,9 @@
   "scripts": {
     "test": "grunt test",
     "start": "grunt serve",
-    "build": "grunt"
+    "build": "grunt",
+    "docker:build": "npm run --silent build && docker build -t 1-component-a-day:latest .",
+    "docker:start": "npm run --silent docker:build && docker run --rm -d -p 8082:80/tcp 1-component-a-day:latest"
   },
   "author": {
     "name": "Hakim El Hattab",

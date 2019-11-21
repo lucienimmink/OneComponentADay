@@ -1,0 +1,13 @@
+node_modules
+.vscode
+public
+src
+tests
+css
+img
+js
+lib
+plugin
+test
+bower.json
+demo.html
