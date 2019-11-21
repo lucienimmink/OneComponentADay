@@ -14,57 +14,57 @@ module.exports = grunt => {
     meta: {
       banner:
         "/*!\n" +
-        ' * reveal.js <%= pkg.version %> (<%= grunt.template.today("yyyy-mm-dd, HH:MM") %>)\n' +
+        " * reveal.js <%= pkg.version %>\n" +
         " * http://revealjs.com\n" +
         " * MIT licensed\n" +
         " *\n" +
         " * Copyright (C) 2019 Hakim El Hattab, http://hakim.se\n" +
-        " */",
+        " */"
     },
 
     uglify: {
       options: {
         banner: "<%= meta.banner %>\n",
-        ie8: true,
+        ie8: true
       },
       build: {
         src: "js/reveal.js",
-        dest: "js/reveal.min.js",
-      },
+        dest: "js/reveal.min.js"
+      }
     },
 
     sass: {
       options: {
         implementation: sass,
-        sourceMap: false,
+        sourceMap: false
       },
       core: {
         src: "css/reveal.scss",
-        dest: "css/reveal.css",
+        dest: "css/reveal.css"
       },
       themes: {
         expand: true,
         cwd: "css/theme/source",
         src: ["*.sass", "*.scss"],
         dest: "css/theme",
-        ext: ".css",
-      },
+        ext: ".css"
+      }
     },
 
     autoprefixer: {
       core: {
-        src: "css/reveal.css",
-      },
+        src: "css/reveal.css"
+      }
     },
 
     cssmin: {
       options: {
-        compatibility: "ie9",
+        compatibility: "ie9"
       },
       compress: {
         src: "css/reveal.css",
-        dest: "css/reveal.min.css",
-      },
+        dest: "css/reveal.min.css"
+      }
     },
 
     jshint: {
@@ -89,10 +89,10 @@ module.exports = grunt => {
           unescape: false,
           define: false,
           exports: false,
-          require: false,
-        },
+          require: false
+        }
       },
-      files: ["gruntfile.js", "js/reveal.js"],
+      files: ["gruntfile.js", "js/reveal.js"]
     },
 
     connect: {
@@ -102,26 +102,49 @@ module.exports = grunt => {
           base: root,
           livereload: true,
           open: true,
-          useAvailablePort: true,
-        },
-      },
+          useAvailablePort: true
+        }
+      }
     },
 
     zip: {
       bundle: {
-        src: ["index.html", "css/**", "js/**", "lib/**", "img/**", "plugin/**", "**.md"],
-        dest: "reveal-js-presentation.zip",
-      },
+        src: [
+          "index.html",
+          "css/**",
+          "js/**",
+          "lib/**",
+          "img/**",
+          "plugin/**",
+          "**.md"
+        ],
+        dest: "reveal-js-presentation.zip"
+      }
     },
     copy: {
       main: {
-        files: [{ expand: true, src: ["index.html", "css/**", "js/**", "lib/**", "img/**", "plugin/**", "**.md"], dest: "dist/" }],
+        files: [
+          {
+            expand: true,
+            src: [
+              "index.html",
+              "css/**",
+              "js/**",
+              "lib/**",
+              "img/**",
+              "plugin/**",
+              "**.md"
+            ],
+            dest: "dist/"
+          }
+        ]
       },
       js: {
         files: [
           {
             expand: true,
             flatten: true,
+            compress: true,
             src: [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/ace-builds/src-noconflict/ace.js",
@@ -132,41 +155,46 @@ module.exports = grunt => {
               "node_modules/ace-builds/src-noconflict/worker-html.js",
               "node_modules/ace-builds/src-noconflict/worker-css.js",
               "node_modules/ace-builds/src-noconflict/worker-javascript.js",
-              "node_modules/album-art-component/build/album-art.js",
+              "node_modules/album-art-component/build/album-art.js"
             ],
-            dest: "plugin/",
-          },
-        ],
-      },
+            dest: "plugin/"
+          }
+        ]
+      }
     },
 
     watch: {
       js: {
         files: ["gruntfile.js", "js/reveal.js"],
-        tasks: "js",
+        tasks: "js"
       },
       theme: {
-        files: ["css/theme/source/*.sass", "css/theme/source/*.scss", "css/theme/template/*.sass", "css/theme/template/*.scss"],
-        tasks: "css-themes",
+        files: [
+          "css/theme/source/*.sass",
+          "css/theme/source/*.scss",
+          "css/theme/template/*.sass",
+          "css/theme/template/*.scss"
+        ],
+        tasks: "css-themes"
       },
       css: {
         files: ["css/reveal.scss"],
-        tasks: "css-core",
+        tasks: "css-core"
       },
       test: {
         files: ["test/*.html"],
-        tasks: "test",
+        tasks: "test"
       },
       html: {
-        files: root.map(path => path + "/*.html"),
+        files: root.map(path => path + "/*.html")
       },
       markdown: {
-        files: root.map(path => path + "/*.md"),
+        files: root.map(path => path + "/*.md")
       },
       options: {
-        livereload: true,
-      },
-    },
+        livereload: true
+      }
+    }
   });
 
   grunt.loadNpmTasks("grunt-contrib-clean");
