@@ -48,8 +48,8 @@
               Ayreon
             </span>
             <span class="fragment reveal-album">
-              <album-art artist="tool" album="aenima"></album-art><br />
-              Tool &bull; Ænima
+              <album-art artist="epica" album="omega"></album-art><br />
+              Epica &bull; Omega
             </span>
           </section>
           <section>
@@ -149,7 +149,7 @@
           <section>
             Software Architect &amp; <br />
             Web Evangelist<br />
-            @ <em>ISAAC</em>
+            @ <em>ISAAC (becoming iO)</em>
           </section>
           <section>
             <div id="google-maps">
@@ -389,37 +389,34 @@ shadow.appendChild(styleElem);</code></pre>
             <span class="code-file">File: my-custom-element.js</span>
           </section>
           <section>
-            <h3>Which could also be external</h3>
-            <pre><code class="hljs js" data-line-numbers>const linkElem = document.createElement('link');
-linkElem.setAttribute('rel', 'stylesheet');
-linkElem.setAttribute('href', 'style.css');
-
-shadow.appendChild(linkElem);</code></pre>
+            <h3>Bonus: CSS Variables</h3>
+            <pre><code class="hljs js" data-line-numbers="3-7,9-10">const styleElem = document.createElement('style');
+styleElem.textContent = `
+  :host {
+    --primary: rgb(0 110 205);
+    --fallback: red;
+    --background: rgb(249 249 249);
+  }
+  p {
+    background-color: var(--background);
+    color: var(--primary, var(--fallback, white));
+  }
+`;
+shadow.appendChild(styleElem);</code></pre>
             <span class="code-file">File: my-custom-element.js</span>
           </section>
           <section>
-            <p class="warn">
-              Please pay attention if you use external CSS. <br />
-              What is the URL? 🤔 <br />
-              <span class="fragment"
-                >Only use <strong>Absolute URIs</strong>. <br
-              /></span>
-              <span class="fragment"
-                >Or better yet: don't use external CSS.</span
-              >
-            </p>
-          </section>
-          <section>
-            <h2>
-              🚨 V0 <span style="text-transform: lowercase;">versus</span> V1 🚨
-            </h2>
-          </section>
-          <section>
-            <h3>Web components V0</h3>
+            <h3>CSS variables and shadow DOM</h3>
             <ul>
-              <li class="fragment">Are outdated</li>
-              <li class="fragment">Only worked in Chrome</li>
-              <li class="fragment">Should not be used anymore</li>
+              <li class="fragment fade-in-then-semi-out">
+                No shadow DOM: Uses global styling
+              </li>
+              <li class="fragment fade-in-then-semi-out">
+                Shadow DOM: scoped styling
+              </li>
+              <li class="fragment fade-in-then-semi-out">
+                Shadow DOM & CSS variables: can use CSS variables
+              </li>
             </ul>
           </section>
         </section>
