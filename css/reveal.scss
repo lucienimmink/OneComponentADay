@@ -1891,6 +1891,9 @@ form.stacked input.emoji-copy,
 .reveal .small {
   font-size: 1.5rem;
 }
+.reveal .muted {
+  filter: brightness(0.75);
+}
 .reveal .warn {
   padding: 2rem 5rem 2rem 8rem;
   background: rgba(255, 255, 64, 0.65);

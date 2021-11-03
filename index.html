@@ -265,15 +265,16 @@
           </section>
           <section>
             <h3>Customize built-in elements</h3>
-            <pre><code class="hljs js" data-line-numbers>class List extends HTMLULElement {
-  // enter code here; but think of the consequences
-  // do you really need to extend a built-in element?
-  // how it that not confusing 🤷
-  // on the other hand, you have your fallback for free 🎉
+            <pre><code class="hljs js" data-line-numbers>class SortableList extends HTMLOListElement {
+  constructor() {
+    super();
+    // append constructor code
+  }
+  // and more class magic
 };
-customElements.define('list', List, { extends: "ul" });</code></pre>
+customElements.define('sortable-list', SortableList, { extends: "ol" });</code></pre>
             <span class="code-file">File: my-custom-built-in-element.js</span>
-            <pre><code class="hljs html" data-line-numbers><ul is="list"></ul></code></pre>
+            <pre><code class="hljs html" data-line-numbers><ol is="sortable-list"></ol></code></pre>
             <span class="code-file">File: my-custom-build-in-page.html</span>
           </section>
           <section>
@@ -354,8 +355,27 @@ customElements.define('list', List, { extends: "ul" });</code></pre>
             </p>
             <p class="fragment small">
               Closed: Denies access to the node(s) of a closed shadow root from
-              JavaScript outside it.
+              JavaScript outside it.*
             </p>
+            <p class="fragment small muted">
+              * It is still possible to access the dom from outside the element.
+              It's probably not worth the effort.
+            </p>
+          </section>
+          <section>
+            <pre><code class="hljs js" data-line-numbers="2,7">// my-custom-element.js
+this._root = this.attachShadow({ mode: "closed" });
+
+// somewhere-else.js
+const $myWebComponent = document.querySelector("my-web-component");
+$myWebComponent.shadowRoot // null
+$myWebComponent._root // shadow-root (closed)</code></pre>
+            <img
+              class="fragment"
+              src="img/shadow-dom-closed-override.gif"
+              alt="Even will the component is 'closed' you can still override the content"
+              style="max-height: 33vh;"
+            />
           </section>
           <section>
             <h3>Create the shadow DOM</h3>
@@ -480,9 +500,8 @@ class AlbumArt extends React.Component {
           <section>
             <h2>Libraries</h2>
             <ul>
-              <li>LitElement</li>
+              <li>LIT</li>
               <li>Stencil.js</li>
-              <li>Polymer</li>
               <li>Skate.js</li>
               <li>... and many more</li>
             </ul>
@@ -552,8 +571,8 @@ class AlbumArt extends React.Component {
           <section>
             <h3>album-art</h3>
             <pre><code class="hljs html" data-line-numbers="2-3, 11-14"><div class="grid">
-  <album-art artist="the gathering"></album-art>
-  <album-art artist="tool" album="fear inoculum"></album-art>
+  <album-art artist="ayreon"></album-art>
+  <album-art artist="epica" album="Ωmega"></album-art>
 </div>
 <style>
   .grid {
@@ -580,8 +599,8 @@ class AlbumArt extends React.Component {
           <section>
             <h3>Web components</h3>
             <pre><code class="hljs html" data-line-numbers="2-3"><div class="grid">
-  <album-art artist="the gathering"></album-art>
-  <album-art artist="tool" album="fear inoculum"></album-art>
+  <album-art artist="ayreon"></album-art>
+  <album-art artist="epica" album="Ωmega"></album-art>
 </div></code></pre>
             <p class="fragment">
               APIs to create new custom, reusable HTML tags
@@ -613,9 +632,8 @@ class AlbumArt extends React.Component {
           <section>
             <h3>Web components</h3>
             <ul>
+              <li class="fragment">❤️ CSS variables</li>
               <li class="fragment">Integrate well with modern frameworks</li>
-              <li class="fragment">Have multiple libraries</li>
-              <li class="fragment">Have a great future</li>
               <li class="fragment">Can fetch album art 🥳🎉</li>
             </ul>
           </section>
