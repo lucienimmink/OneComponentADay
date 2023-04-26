@@ -151,22 +151,6 @@
             Developer Advocate<br />
             @ <em>iO</em>
           </section>
-          <section>
-            <div id="google-maps">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d70.49368579825386!2d5.463075369060892!3d51.4512164400623!2m3!1f0!2f45.04469628013218!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x47c6d93fcde42b59%3A0xb1fdab2a93bde85d!2sISAAC!5e1!3m2!1sen!2snl!4v1571839417768!5m2!1sen!2snl"
-                width="600"
-                height="450"
-                frameborder="0"
-                style="border:0;"
-                allowfullscreen=""
-              ></iframe>
-            </div>
-          </section>
-          <section>
-            <img src="img/plantsoen.webp" alt="plantsoen">
-            <p class="small, muted">Friso Geerlings plantsoen, Eindhoven</p>
-          </section>
         </section>
         <section data-group="what-are">
           <section data-background="#212121">
@@ -414,7 +398,7 @@ shadow.appendChild(styleElem);</code></pre>
           </section>
           <section>
             <h3>Bonus: CSS Variables</h3>
-            <pre><code class="hljs js" data-line-numbers="3-7,9-10">const styleElem = document.createElement('style');
+            <pre><code class="hljs js" data-line-numbers="4-6,9-10">const styleElem = document.createElement('style');
 styleElem.textContent = `
   :host {
     --primary: rgb(0 110 205);
@@ -484,13 +468,29 @@ class AlbumArt extends React.Component {
           </section>
           <section>
             <h3>Vue</h3>
-            <pre><code class="hljs js" data-line-numbers>Vue.config.ignoredElements = [/album-art/];</code></pre>
-            <span class="code-file">File: main.js</span>
+            <pre><code class="hljs js" data-line-numbers>import vue from '@vitejs/plugin-vue'
+              
+export default {
+  plugins: [
+    vue({
+      template: {
+        compilerOptions: {
+          // treat all tags with a dash as custom elements
+          isCustomElement: (tag) => tag.includes('-')
+        }
+      }
+    })
+  ]
+}</code></pre>
+            <span class="code-file">File: vite.config.js</span>
           </section>
           <section>
             <h3>Vue - 2</h3>
-            <pre><code class="hljs js" data-line-numbers="2,5"><template>
-  <album-art :album="album.name" :artist="artist.name"></album-art>
+            <pre><code class="hljs js" data-line-numbers="2,6"><template>
+  <album-art 
+    .album="{album.name}" 
+    .artist="{artist.name}">
+  </album-art>
 </template>
 <script>
   import "album-art-component";
