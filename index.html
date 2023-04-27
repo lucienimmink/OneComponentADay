@@ -45,11 +45,11 @@
             </blockquote>
             <span class="fragment reveal-album">
               <album-art artist="ayreon"></album-art> <br />
-              Ayreon
+              <span class="small">Ayreon</span>
             </span>
             <span class="fragment reveal-album">
-              <album-art artist="epica" album="Ωmega"></album-art><br />
-              Epica &bull; Ωmega
+              <album-art artist="epica" album="Ωmega alive"></album-art><br />
+              <span class="small">Epica &bull; Ωmega alive</span>
             </span>
           </section>
           <section>
@@ -92,15 +92,9 @@
           <section>
             <h3>This works ... until it becomes too complex</h3>
             <ul>
-              <li class="fragment">
-                It requires a lot of shared knowledge
-              </li>
+              <li class="fragment">It requires a lot of shared knowledge</li>
               <li class="fragment">Or a lot of copy-pasting</li>
               <li class="fragment">Who is responsible for the styling?</li>
-              <li class="fragment">
-                An <span class="code-element">&lt;iframe&gt;</span> is not
-                always a solution
-              </li>
             </ul>
           </section>
           <section>
@@ -147,15 +141,23 @@
             <img src="img/lucien-square.webp" alt="Lucien Immink, B.Eng" />
           </section>
           <section>
-            Software Architect &amp; <br />
-            Developer Advocate<br />
-            @ <em>iO</em>
+            <p>
+              Software Architect &amp; <br />
+              Developer Advocate<br />
+              @ <em>iO</em> <br />
+            </p>
+            <br />
+            <p>Google Developer Expert</p>
           </section>
         </section>
         <section data-group="what-are">
           <section data-background="#212121">
             <h3>Web components</h3>
-            <img src="img/web-components.webp" alt="Web components" height="80%" />
+            <img
+              src="img/web-components.webp"
+              alt="Web components"
+              height="80%"
+            />
           </section>
           <section>
             <h1>Templates</h1>
@@ -306,11 +308,7 @@ customElements.define('sortable-list', SortableList, { extends: "ol" });</code><
                 disconnected from the document's DOM.
               </p>
               <p>
-                adoptedCallback: Invoked each time the custom element is moved
-                to a new document. example: move element between iframes.
-              </p>
-              <p>
-                attributeChangedCallback: Invoked each time one of the custom
+            attributeChangedCallback: Invoked each time one of the custom
                 element's attributes is added, removed, or changed.
               </p>
             </aside>
@@ -358,7 +356,7 @@ $myWebComponent._root // shadow-root (closed)</code></pre>
               class="fragment"
               src="img/shadow-dom-closed-override.gif"
               alt="Even will the component is 'closed' you can still override the content"
-              style="max-height: 33vh;"
+              style="max-height: 33vh"
             />
           </section>
           <section>
@@ -461,10 +459,18 @@ class AlbumArt extends React.Component {
     );
   }
 }</code></pre>
-          <p class="fragment small">
-            While React can render Web Components, it cannot <em>easily</em> pass React props to custom element properties or event listeners.<br /> <br />
-            Use a react-wrapper: <a href="https://www.npmjs.com/package/@lit-labs/react" target="_blank">@lit-labs/react - npmjs.com</a>
-          </p>
+            <p class="fragment small">
+              While React can render Web Components, it cannot <em>easily</em>
+              pass React props to custom element properties or event
+              listeners.<br />
+              <br />
+              Use a react-wrapper:
+              <a
+                href="https://www.npmjs.com/package/@lit-labs/react"
+                target="_blank"
+                >@lit-labs/react - npmjs.com</a
+              >
+            </p>
           </section>
           <section>
             <h3>Vue</h3>
@@ -572,7 +578,7 @@ export default {
             <h3>album-art</h3>
             <pre><code class="hljs html" data-line-numbers="2-3, 11-14"><div class="grid">
   <album-art artist="ayreon"></album-art>
-  <album-art artist="epica" album="Ωmega"></album-art>
+  <album-art artist="epica" album="Ωmega alive"></album-art>
 </div>
 <style>
   .grid {
@@ -600,7 +606,7 @@ export default {
             <h3>Web components</h3>
             <pre><code class="hljs html" data-line-numbers="2-3"><div class="grid">
   <album-art artist="ayreon"></album-art>
-  <album-art artist="epica" album="Ωmega"></album-art>
+  <album-art artist="epica" album="Ωmega alive"></album-art>
 </div></code></pre>
             <p class="fragment">
               APIs to create new custom, reusable HTML tags
@@ -641,10 +647,20 @@ export default {
         <section data-background="#212121">
           <h1>Thank you!</h1>
           <p class="small">
-            🐦 <a href="https://twitter.com/lucienimmink">lucienimmink</a> <br />
+            🐦 <a href="https://twitter.com/lucienimmink">lucienimmink</a>
+            <br />
             🏢 <a href="https://www.iodigital.com">www.iodigital.com</a> <br />
-            📧 <a href="&#108;&#117;&#099;&#105;&#101;&#110;&#046;&#105;&#109;&#109;&#105;&#110;&#107;&#064;&#105;&#111;&#100;&#105;&#103;&#105;&#116;&#097;&#108;&#046;&#099;&#111;&#109;">&#108;&#117;&#099;&#105;&#101;&#110;&#046;&#105;&#109;&#109;&#105;&#110;&#107;&#064;&#105;&#111;&#100;&#105;&#103;&#105;&#116;&#097;&#108;&#046;&#099;&#111;&#109;</a> <br />
-            🧑‍💼 <a href="https://www.linkedin.com/in/lucien-immink/">linkedin.com/in/lucien-immink/</a> <br />
+            📧
+            <a
+              href="&#108;&#117;&#099;&#105;&#101;&#110;&#046;&#105;&#109;&#109;&#105;&#110;&#107;&#064;&#105;&#111;&#100;&#105;&#103;&#105;&#116;&#097;&#108;&#046;&#099;&#111;&#109;"
+              >&#108;&#117;&#099;&#105;&#101;&#110;&#046;&#105;&#109;&#109;&#105;&#110;&#107;&#064;&#105;&#111;&#100;&#105;&#103;&#105;&#116;&#097;&#108;&#046;&#099;&#111;&#109;</a
+            >
+            <br />
+            🧑‍💼
+            <a href="https://www.linkedin.com/in/lucien-immink/"
+              >linkedin.com/in/lucien-immink/</a
+            >
+            <br />
           </p>
         </section>
       </div>
@@ -660,8 +676,8 @@ export default {
         history: true,
         dependencies: [
           { src: "plugin/notes/notes.js", async: true },
-          { src: "plugin/highlight/highlight.js", async: true }
-        ]
+          { src: "plugin/highlight/highlight.js", async: true },
+        ],
       });
 
       $("code").RevealEditor();
