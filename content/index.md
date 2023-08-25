@@ -33,8 +33,9 @@ Here is my _artist_ and _album name_</span>.
 ```javascript
 const albumArt = ({artist, album}) => {
   let magic;
-  // do magic, magic will return an &lt;img&gt; tag
+  // do magic, magic will return an <img> tag
   return magic;
+}
 ```
 
 <p>
@@ -46,7 +47,7 @@ const albumArt = ({artist, album}) => {
 ### In _my_ page
 
 ```html
-<script src="//my-domain.example.com/album-art.js"></script>
+<script src="//alien-domain.example.com/album-art.js"></script>
 
 <div id="art"></div>
 
@@ -144,12 +145,14 @@ Google Developer Expert
 
 --
 
-<p class="warn">
-  This DOM is not live.<br />
-  No calls will be made to fetch the image. <br />
-  No CSS is applied.<br />
-  No script is excecuted.
-</p>
+<div class="warn">
+  This DOM is not live.
+  <ul>
+    <li>No images are fetched.</li>
+    <li>No CSS is applied.</li>
+    <li>No script is excecuted.</li>
+  </ul>
+</div>
 
 --
 
@@ -174,11 +177,14 @@ if ('content' in document.createElement('template')) {
 
 --
 
-<p class="success">
-  Once added the image is fetched. <br />
-  CSS is applied to the nodes. <br />
-  Script is excecuted.
-</p>
+<div class="success">
+  Once added to the DOM:
+  <ul>
+    <li>The images are fetched. </li>
+    <li>CSS is applied to the nodes.</li>
+    <li>Script is excecuted.</li>
+  </ul>
+</div>
 
 --
 
@@ -572,17 +578,17 @@ export default {
 </render-plantuml>
 ```
 
-![Example of render-plantuml](/assets/render-plantuml-example.webp)<!-- .element: class="fragment fade-in image" -->
+![Example of render-plantuml](/assets/render-plantuml-example.webp)<!-- .element: class="image" -->
 
 --
 
-Skeleton components
+### Skeleton components
 
-![Example of fg-configurator](/assets/fg-configurator.webp)<!-- .element: class="fragment fade-in image" -->
+![Example of fg-configurator](/assets/fg-configurator.webp)<!-- .element: class="image" -->
 
 --
 
-&lt;api-viewer&gt;
+### &lt;api-viewer&gt;
 
 ```html
 <api-viewer src="./custom-elements.json"></api-viewer>
@@ -591,6 +597,14 @@ Skeleton components
 <api-viewer src="/assets/wc/custom-elements.json"></api-viewer><!-- .element: class="image" -->
 
 --
+
+### Design systems
+
+![Example of shoelace](/assets/shoelace.webp)<!-- .element: class="image h-70" -->
+
+--
+
+
 
 ## &lt;album-art&gt;
 

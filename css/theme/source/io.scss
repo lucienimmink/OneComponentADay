@@ -178,6 +178,12 @@ $heading1TextShadow: 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20p
 	.h-90 {
 		max-height: calc(var(--slide-height) - 2*var(--r-block-margin));
 	}
+	.h-80 {
+		max-height: calc(var(--slide-height) - 4*var(--r-block-margin));
+	}
+	.h-70 {
+		max-height: calc(var(--slide-height) - 6*var(--r-block-margin));
+	}
 	.reveal-album {
 		display: inline-block;
 		width: 300px; 
@@ -230,6 +236,8 @@ $heading1TextShadow: 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20p
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 16px;
+		margin-inline-start: 5%;
+		width: 90%;
 		.album-art-grid-item {
 			display: block;
 			border-radius: 5px;
