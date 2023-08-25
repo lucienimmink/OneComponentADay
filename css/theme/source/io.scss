@@ -1,0 +1,337 @@
+/**
+ * League theme for reveal.js.
+ *
+ * This was the default theme pre-3.0.0.
+ *
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+@font-face {
+	font-family: "TTCommonsPro";
+	src: url("/assets/fonts/TTCommonsPro-Medium.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Reckless";
+	src: url("/assets/fonts/Reckless-RegularItalic.woff2") format("woff2");
+}
+
+// Override theme settings (see ../template/settings.scss)
+
+$mainFont: TTCommonsPro,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+$headingFont: TTCommonsPro,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+$codeFont: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+
+$headingTextTransform: 'initial';
+
+$mainColorMuted: rgba(255, 255, 255, 0.5);
+// $headingTextShadow: 0px 0px 6px rgba(0,0,0,0.2);
+// $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20px 20px rgba(0,0,0,.15);
+$heading1TextShadow: 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20px 20px rgba(0,0,0,.15);
+
+// Background generator
+@mixin bodyBackground() {
+	html[data-theme="black"] & {
+		background: black;
+		--r-link-color: white;
+		--r-main-color: white;
+		--r-heading-color: white;
+	}
+	html[data-theme="blue"] & {
+		background: #0017ee;
+		--r-link-color: white;
+		--r-main-color: white;
+		--r-heading-color: white;
+	}
+	html[data-theme="calm-green"] & {
+		background: #c4d1ce;
+		--r-link-color: black;
+		--r-main-color: black;
+		--r-heading-color: black;
+	}
+	html[data-theme="calm-beige"] & {
+		background: #e1cfbf;
+		--r-link-color: black;
+		--r-main-color: black;
+		--r-heading-color: black ;
+	}
+	html[data-theme="calm-pink"] & {
+		background: #dcc8c2;
+		--r-link-color: black;
+		--r-main-color: black;
+		--r-heading-color: black ;
+	}
+	html[data-theme="calm-blue"] & {
+		background: #bdcad1;
+		--r-link-color: black;
+		--r-main-color: black;
+		--r-heading-color: black ;
+	}
+}
+
+// Change text colors against light slide backgrounds
+@include light-bg-text-color(#222);
+ 
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+.reveal {
+	--r-background-color: rgb(36,36,36);
+	--r-muted-color: rgb(196,196,196);
+	blockquote {
+		font-style: normal;
+		font-family: $mainFont;
+		box-shadow: var(--r-heading1-text-shadow);
+		background-color: rgba(0, 0, 0, 0.15);
+
+		> :before, > :after {
+			content: '"';
+			font-size: 5rem;
+			position: absolute;			
+			font-family: "felix titling", "perpetua-titling", sans-serif;
+			top: 0px;
+		}
+
+		> :before {
+			left: 10px;
+			
+		}
+		> :after {
+			right: 10px;
+		}
+
+		P {
+			padding-inline: 1rem;
+		}
+	}
+	pre code {
+		overflow-x : hidden;
+	}
+	pre code:first-child {
+		box-shadow: var(--r-heading1-text-shadow);
+	}
+	em,
+	blockquote em {
+		font-family: 'Reckless', sans-serif;
+	}
+	.icon {
+		width: 1.5em;
+		margin: 0;
+	}
+	.icon-inline {
+		margin-bottom: -5px;
+	}
+	.filename {
+		width: 90%;
+		margin: -0.7em 0 0 5%;
+		font-size: 0.75em;
+		padding: 0.25em 0;
+		background: var(--r-background-color);
+		box-shadow: var(--r-heading1-text-shadow);
+		color: white;
+
+		.icon {
+			width: 1em;
+		}
+
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
+	}
+	a {
+		background-repeat: no-repeat;
+		background-position: 100% 100%;
+		background-size: 100% 3px;
+		background-image: linear-gradient(var(--r-link-color), var(--r-link-color));
+		color: var(--r-link-color);
+		text-decoration: none;
+		transition: background-size .35s cubic-bezier(.645,.045,.355,1);
+		&:hover {
+			color: var(--r-link-color);
+			background-size: 0 3px;
+		}
+	}
+	.circle {
+		border-radius: 50%;
+		box-shadow: var(--r-heading1-text-shadow);
+	}
+	.image {
+		border-radius: 5px;
+		box-shadow: var(--r-heading1-text-shadow);
+	}
+	video {
+		box-shadow: var(--r-heading1-text-shadow);
+		border-radius: 5px;
+	}
+	.w-80 {
+		width: 80%;
+	}
+	.w-90 {
+		width: 90%;
+	}
+	.h-90 {
+		max-height: calc(var(--slide-height) - 2*var(--r-block-margin));
+	}
+	.reveal-album {
+		display: inline-block;
+		width: 300px; 
+	}
+	.reveal-album album-art {
+		height: 250px;
+		width: 250px;
+		display: inline-block; 
+	}
+	.small {
+		font-size: 0.75em;
+	}
+	.warn {
+		padding: 2rem 5rem 2rem 8rem;
+		background: rgba(255, 255, 64, 0.45);
+		color: black;
+		text-align: left;
+		border-left: 15px solid yellow;
+		box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15); 
+		&:before {
+			content: "⚠";
+			font-size: 4rem;
+			display: inline-block;
+			margin-left: -6rem;
+			width: 4rem;
+			position: absolute;
+		}
+		a {
+			color: black;
+			background-image: linear-gradient(black, black);
+		}
+	}
+	.success {
+		padding: 2rem 5rem 2rem 8rem;
+		background: rgba(64, 255, 64, 0.35);
+		color: black;
+		text-align: left;
+		border-left: 15px solid lime;
+		box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15); 
+		&:before {
+			content: "✔️";
+			font-size: 3rem;
+			display: inline-block;
+			margin-left: -6rem;
+			width: 4rem;
+			position: absolute;
+		}
+	}
+	.album-art-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 16px;
+		.album-art-grid-item {
+			display: block;
+			border-radius: 5px;
+			box-shadow: var(--r-heading1-text-shadow);
+		}
+	}
+}
+
+// scrollbars on windows -----------------------
+.reveal .code-wrapper code {
+	&::-webkit-scrollbar {
+		width: 5px;
+		height: 5px;
+		background-color: var(--r-background-color);
+		border-radius: 3px;
+		box-shadow: none;
+		border-width: 0;
+  	}
+	&::-webkit-scrollbar-corner {
+		background-color: var(--r-background-color);
+	}
+	&::-webkit-scrollbar-button {
+		display: none;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: var(--r-muted-color);
+	}
+}
+// ---------------------------------------------
+
+.reveal api-viewer {
+	color: black;
+	display: block;
+    background: white;
+	transform: scale(0.76);
+	transform-origin: top center;
+    margin: 0 auto;
+}
+
+
+/*********************************************
+ * Mixins for readability of transitions
+ *********************************************/
+
+ @mixin transition-global($style) {
+	.reveal .slides section[data-transition=#{$style}],
+	.reveal.#{$style} .slides section:not([data-transition]) {
+		@content;
+	}
+}
+@mixin transition-stack($style) {
+	.reveal .slides section[data-transition=#{$style}].stack,
+	.reveal.#{$style} .slides section.stack {
+		@content;
+	}
+}
+@mixin transition-horizontal-past($style) {
+	.reveal .slides>section[data-transition=#{$style}].past,
+	.reveal .slides>section[data-transition~=#{$style}-out].past,
+	.reveal.#{$style} .slides>section:not([data-transition]).past {
+		@content;
+	}
+}
+@mixin transition-horizontal-future($style) {
+	.reveal .slides>section[data-transition=#{$style}].future,
+	.reveal .slides>section[data-transition~=#{$style}-in].future,
+	.reveal.#{$style} .slides>section:not([data-transition]).future {
+		@content;
+	}
+}
+
+@mixin transition-vertical-past($style) {
+	.reveal .slides>section>section[data-transition=#{$style}].past,
+	.reveal .slides>section>section[data-transition~=#{$style}-out].past,
+	.reveal.#{$style} .slides>section>section:not([data-transition]).past {
+		@content;
+	}
+}
+@mixin transition-vertical-future($style) {
+	.reveal .slides>section>section[data-transition=#{$style}].future,
+	.reveal .slides>section>section[data-transition~=#{$style}-in].future,
+	.reveal.#{$style} .slides>section>section:not([data-transition]).future {
+		@content;
+	}
+}
+
+/*********************************************
+ * SLIDE TRANSITION
+ * Aliased 'linear' for backwards compatibility
+ *********************************************/
+
+ @each $stylename in slide, linear {
+	@include transition-horizontal-past(#{$stylename}) {
+		transform: none;
+	}
+	@include transition-horizontal-future(#{$stylename}) {
+		transform: none;
+	}
+	@include transition-vertical-past(#{$stylename}) {
+		transform: none;
+	}
+	@include transition-vertical-future(#{$stylename}) {
+		transform: none;
+	}
+}
