@@ -310,7 +310,7 @@ customElements.define('sortable-list', SortableList, { extends: "ol" });
 
 --
 
-#### Attach a shadow DOIM
+#### Attach a shadow DOM
 
 ```js
 const shadowDom = this.attachShadow({ mode: 'open'});
