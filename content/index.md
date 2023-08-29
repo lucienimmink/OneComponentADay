@@ -344,7 +344,7 @@ $myWebComponent._root // shadow-root (closed)
 
 ### Create the _shadow DOM_
 
-```javascript
+```javascript[1,2-14,15]
 const shadow = this.attachShadow({ mode: 'open'});
 const wrapper = document.createElement('div');
 wrapper.classList.add('wrapper');
