@@ -1,0 +1,1454 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "components.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CatalogItem",
+          "declaration": {
+            "name": "CatalogItem",
+            "module": "components.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CatalogOverview",
+          "declaration": {
+            "name": "CatalogOverview",
+            "module": "components.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "HelloWorld",
+          "declaration": {
+            "name": "HelloWorld",
+            "module": "components.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/hello-world.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Hello generated world! Click for a gift or a bomb",
+          "name": "HelloWorld",
+          "cssProperties": [
+            {
+              "description": "Controls the text colour",
+              "name": "--text-color",
+              "default": "black"
+            },
+            {
+              "description": "Controls the background colour",
+              "name": "--background-color",
+              "default": "red"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"wonderful\"",
+              "description": "What type is the world today?",
+              "attribute": "type"
+            },
+            {
+              "kind": "method",
+              "name": "eventFunctionGift",
+              "privacy": "private",
+              "description": "Write function that dispatches the event Gift"
+            },
+            {
+              "kind": "method",
+              "name": "eventFunctionBomb",
+              "privacy": "private",
+              "description": "Write function that dispatches the event Bomb"
+            }
+          ],
+          "events": [
+            {
+              "name": "Gift",
+              "type": {
+                "text": "Event"
+              },
+              "description": "gift - I'm bearing a gift"
+            },
+            {
+              "name": "Bomb",
+              "type": {
+                "text": "Event"
+              },
+              "description": "bomb - This was a mistake..."
+            }
+          ],
+          "attributes": [
+            {
+              "name": "type",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"wonderful\"",
+              "description": "What type is the world today?",
+              "fieldName": "type"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hello-world",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HelloWorld",
+          "declaration": {
+            "name": "HelloWorld",
+            "module": "components/hello-world.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hello-world",
+          "declaration": {
+            "name": "HelloWorld",
+            "module": "components/hello-world.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/trsit-catalog-item.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CatalogItem",
+          "cssProperties": [
+            {
+              "description": "Controls the text colour",
+              "name": "--text-color",
+              "default": "black"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Your light-dom elements will be placed here",
+              "name": "container"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "productId",
+              "type": {
+                "text": "number"
+              },
+              "default": "-1",
+              "description": "ID of the catalog item",
+              "attribute": "product-id"
+            },
+            {
+              "kind": "field",
+              "name": "isVisible",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "description": "undefined",
+              "attribute": "is-visible"
+            },
+            {
+              "kind": "method",
+              "name": "eventFunctionpurchase",
+              "privacy": "private",
+              "description": "Write function that dispatches the event purchase"
+            }
+          ],
+          "events": [
+            {
+              "name": "purchase",
+              "type": {
+                "text": "Event"
+              },
+              "description": "send intent tu purchase this item"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "product-id",
+              "type": {
+                "text": "number"
+              },
+              "default": "-1",
+              "description": "ID of the catalog item",
+              "fieldName": "productId"
+            },
+            {
+              "name": "is-visible",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "description": "undefined",
+              "fieldName": "isVisible"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "catalog-item",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CatalogItem",
+          "declaration": {
+            "name": "CatalogItem",
+            "module": "components/trsit-catalog-item.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "catalog-item",
+          "declaration": {
+            "name": "CatalogItem",
+            "module": "components/trsit-catalog-item.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/trsit-catalog-overview.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CatalogOverview",
+          "cssProperties": [
+            {
+              "description": "Controls the header colour",
+              "name": "--header-color",
+              "default": "black"
+            },
+            {
+              "description": "Controls the text colour",
+              "name": "--text-color",
+              "default": "black"
+            },
+            {
+              "description": "Controls the border colour",
+              "name": "--border-color",
+              "default": "red"
+            },
+            {
+              "description": "Controls the background colour",
+              "name": "--background-color",
+              "default": "white"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "productIds",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"1,2,3\"",
+              "description": "Which products will we render?",
+              "attribute": "product-ids"
+            },
+            {
+              "kind": "field",
+              "name": "purchases",
+              "type": {
+                "text": "array"
+              },
+              "privacy": "private",
+              "default": "[]"
+            },
+            {
+              "kind": "field",
+              "name": "handlePurchase",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "isVisible",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "id",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "name": "product-ids",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"1,2,3\"",
+              "description": "Which products will we render?",
+              "fieldName": "productIds"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "catalog-overview",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CatalogOverview",
+          "declaration": {
+            "name": "CatalogOverview",
+            "module": "components/trsit-catalog-overview.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "catalog-overview",
+          "declaration": {
+            "name": "CatalogOverview",
+            "module": "components/trsit-catalog-overview.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/clippy/animations.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "AnimationStates",
+          "members": [
+            {
+              "kind": "field",
+              "name": "State",
+              "type": {
+                "text": "object"
+              },
+              "privacy": "public",
+              "static": true,
+              "default": "{WAITING: 1, EXITED: 0}"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "AnimationStates",
+          "declaration": {
+            "name": "AnimationStates",
+            "module": "components/clippy/animations.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/clippy/animator.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Animator",
+          "members": [
+            {
+              "kind": "field",
+              "name": "started",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "exiting",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "currentAnimation",
+              "type": {
+                "text": "Animation | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "endCallback",
+              "type": {
+                "text": "any"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "loop",
+              "type": {
+                "text": "any"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "currentFrame",
+              "type": {
+                "text": "Frame | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "currentFrameIndex",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private",
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "soundList",
+              "type": {
+                "text": "[Sound] | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "animations",
+              "type": {
+                "text": "Animations | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "queue",
+              "type": {
+                "text": "Queue"
+              },
+              "privacy": "private",
+              "default": "new Queue()"
+            },
+            {
+              "kind": "field",
+              "name": "loader",
+              "type": {
+                "text": "Loader"
+              },
+              "privacy": "private",
+              "default": "new Loader()"
+            },
+            {
+              "kind": "field",
+              "name": "clippy",
+              "type": {
+                "text": "LitElement"
+              },
+              "privacy": "private",
+              "default": "clippy"
+            },
+            {
+              "kind": "method",
+              "name": "SetupData",
+              "privacy": "public",
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "GetFramesize",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "number[] | undefined"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "GetAgentData",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "Promise<string>"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "GetSoundData",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "Promise<string>"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "changePos",
+              "parameters": [
+                {
+                  "name": "pos",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "clearTimeout",
+              "privacy": "public"
+            },
+            {
+              "kind": "method",
+              "name": "getRandomAnimationName",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "typeName",
+                  "optional": true,
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "hasAnimation",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "exitAnimation",
+              "privacy": "public"
+            },
+            {
+              "kind": "method",
+              "name": "showAnimation",
+              "privacy": "public",
+              "parameters": [
+                {
+                  "name": "animationName",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "callback",
+                  "type": {
+                    "text": "(state: AnimationStates) => void"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "queueAnimation",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "animation",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "enqueueFunction",
+              "privacy": "public",
+              "parameters": [
+                {
+                  "name": "func",
+                  "type": {
+                    "text": "(complete: any) => void"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "showIdleAnimation",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "callback",
+                  "type": {
+                    "text": "(state: AnimationStates) => void"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "step",
+              "privacy": "public"
+            },
+            {
+              "kind": "method",
+              "name": "preloadSounds",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "sounds",
+                  "type": {
+                    "text": "[string, string]"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "draw",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "getNextAnimationFrame",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "playSound",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "atLastFrame",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "stopAnimating",
+              "privacy": "public",
+              "parameters": [
+                {
+                  "name": "showExitAnimation",
+                  "type": {
+                    "text": "boolean"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "onQueueEmpty",
+              "privacy": "public"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Animator",
+          "declaration": {
+            "name": "Animator",
+            "module": "components/clippy/animator.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/clippy/balloon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "BalloonElement",
+          "members": [
+            {
+              "kind": "field",
+              "name": "addWord",
+              "type": {
+                "text": "any"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "loop",
+              "type": {
+                "text": "any"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "active",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "WORD_SPEAK_TIME",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private",
+              "default": "200"
+            },
+            {
+              "kind": "field",
+              "name": "speakText",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "attribute": "speakText"
+            },
+            {
+              "kind": "field",
+              "name": "shownText",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "attribute": "shownText"
+            },
+            {
+              "kind": "field",
+              "name": "pauseWriting",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "pauseWriting"
+            },
+            {
+              "kind": "method",
+              "name": "speak",
+              "privacy": "public",
+              "parameters": [
+                {
+                  "name": "text",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "sayWords",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "text",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "pause",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "resume",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "speakText",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "fieldName": "speakText"
+            },
+            {
+              "name": "shownText",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "fieldName": "shownText"
+            },
+            {
+              "name": "pauseWriting",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "pauseWriting"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit-element"
+          },
+          "tagName": "balloon-element",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "balloon-element",
+          "declaration": {
+            "name": "BalloonElement",
+            "module": "components/clippy/balloon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/clippy/balloonstyles.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "balloonStyles",
+          "default": "css` .clippy-content { max-width: 200px; min-width: 120px; font-family: 'Microsoft Sans', sans-serif; font-size: 10pt; } .clippy-balloon { background: #ffc; border: 1px solid #a7a7a7; -webkit-border-radius: 4px; border-radius: 4px; -webkit-box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2); box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2); margin: 0 auto 20px; max-width: 200px; padding: 8px; position: relative; } .clippy-tip { border-left: 21px solid transparent; border-top: 20px solid rgba(0, 0, 0, 0.2); bottom: -25px; position: absolute; right: 85px; } .clippy-tip::before { border-left: 23px solid transparent; border-top: 23px solid #a7a7a7; bottom: 2px; content: ''; position: absolute; right: 5px; } .clippy-tip::after { border-left: 21px solid transparent; border-top: 21px solid #ffc; bottom: 4px; content: ''; position: absolute; right: 6px; } `"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "balloonStyles",
+          "declaration": {
+            "name": "balloonStyles",
+            "module": "components/clippy/balloonstyles.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/clippy/clippy.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ClippyElement",
+          "members": [
+            {
+              "kind": "field",
+              "name": "agentType",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "animator",
+              "type": {
+                "text": "Animator | undefined"
+              },
+              "privacy": "private",
+              "default": "new Animator(this)"
+            },
+            {
+              "kind": "field",
+              "name": "pauseWriting",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "pos1",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "pos2",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "pos3",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "pos4",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "mouseDown",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "backgroundPosition",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ \"background-position\": \"0px 0px\", width: \"0px\", height: \"0px\", }",
+              "attribute": "backgroundPosition"
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Clippy\"",
+              "attribute": "name"
+            },
+            {
+              "kind": "field",
+              "name": "hide",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"false\"",
+              "attribute": "hide"
+            },
+            {
+              "kind": "field",
+              "name": "top",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "attribute": "top"
+            },
+            {
+              "kind": "field",
+              "name": "left",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "attribute": "left"
+            },
+            {
+              "kind": "field",
+              "name": "width",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "attribute": "width"
+            },
+            {
+              "kind": "field",
+              "name": "height",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "attribute": "height"
+            },
+            {
+              "kind": "field",
+              "name": "speakText",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "attribute": "speakText"
+            },
+            {
+              "kind": "method",
+              "name": "speak",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "text",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "hideBalloon",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "animateElement",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "queueAnimation",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "animation",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "onQueueEmpty",
+              "privacy": "public"
+            },
+            {
+              "kind": "method",
+              "name": "stop",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "showElement",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "hideElement",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "pause",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "resume",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "onDoubleClick",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "dragMouseDown",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "elementDrag",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "closeDragElement",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "onmouseup"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "backgroundPosition",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ \"background-position\": \"0px 0px\", width: \"0px\", height: \"0px\", }",
+              "fieldName": "backgroundPosition"
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Clippy\"",
+              "fieldName": "name"
+            },
+            {
+              "name": "hide",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"false\"",
+              "fieldName": "hide"
+            },
+            {
+              "name": "top",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "fieldName": "top"
+            },
+            {
+              "name": "left",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "fieldName": "left"
+            },
+            {
+              "name": "width",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "fieldName": "width"
+            },
+            {
+              "name": "height",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "fieldName": "height"
+            },
+            {
+              "name": "speakText",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "speakText"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "clippy-element",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ClippyElement",
+          "declaration": {
+            "name": "ClippyElement",
+            "module": "components/clippy/clippy.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "clippy-element",
+          "declaration": {
+            "name": "ClippyElement",
+            "module": "components/clippy/clippy.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/clippy/loader.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Loader",
+          "members": [
+            {
+              "kind": "method",
+              "name": "loadAgent",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "Promise<string>"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "loadSounds",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "Promise<string>"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Loader",
+          "declaration": {
+            "name": "Loader",
+            "module": "components/clippy/loader.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/clippy/queue.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Queue",
+          "members": [
+            {
+              "kind": "field",
+              "name": "active",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "onEmptyCallback",
+              "type": {
+                "text": "any"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_queue",
+              "type": {
+                "text": "((complete: any) => void)[]"
+              },
+              "privacy": "private",
+              "default": "[]"
+            },
+            {
+              "kind": "field",
+              "name": "createCallback",
+              "privacy": "public"
+            },
+            {
+              "kind": "method",
+              "name": "enqueue",
+              "privacy": "public",
+              "parameters": [
+                {
+                  "name": "func",
+                  "type": {
+                    "text": "(complete: any) => void"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "clear",
+              "privacy": "public"
+            },
+            {
+              "kind": "field",
+              "name": "progressQueue",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "next",
+              "privacy": "private"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Queue",
+          "declaration": {
+            "name": "Queue",
+            "module": "components/clippy/queue.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/clippy/styles.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "agentStyles",
+          "default": "css` .agent { pointer-events: all; flex-grow: 1; } .agent-container { z-index: 999999; position: absolute; display: flex; flex-direction: column; align-items: center; } #Clippy { background: url('https://raw.githubusercontent.com/Towmeykaw/clippy-web-component/main/agents/Clippy/clippy.png'); } #Merlin { background: url('https://raw.githubusercontent.com/Towmeykaw/clippy-web-component/main/agents/Merlin/merlin.png'); } #Bonzi { background: url('https://raw.githubusercontent.com/Towmeykaw/clippy-web-component/main/agents/Bonzi/bonzi.png'); } #F1 { background: url('https://raw.githubusercontent.com/Towmeykaw/clippy-web-component/main/agents/F1/f1.png'); } #Genie { background: url('https://raw.githubusercontent.com/Towmeykaw/clippy-web-component/main/agents/Genie/genie.png'); } #Genius { background: url('https://raw.githubusercontent.com/Towmeykaw/clippy-web-component/main/agents/Genius/genius.png'); } #Links { background: url('https://raw.githubusercontent.com/Towmeykaw/clippy-web-component/main/agents/Links/links.png'); } #Peedy { background: url('https://raw.githubusercontent.com/Towmeykaw/clippy-web-component/main/agents/Peedy/peedy.png'); } #Rocky { background: url('https://raw.githubusercontent.com/Towmeykaw/clippy-web-component/main/agents/Rocky/rocky.png'); } #Rover { background: url('https://raw.githubusercontent.com/Towmeykaw/clippy-web-component/main/agents/Rover/rover.png'); } `"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "agentStyles",
+          "declaration": {
+            "name": "agentStyles",
+            "module": "components/clippy/styles.ts"
+          }
+        }
+      ]
+    }
+  ]
+}

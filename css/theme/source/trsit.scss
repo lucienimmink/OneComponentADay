@@ -13,19 +13,18 @@
 // ---------------------------------------------
 
 @font-face {
-	font-family: "TTCommonsPro";
-	src: url("/assets/fonts/TTCommonsPro-Medium.woff2") format("woff2");
+	font-family: "barlow";
+	src: url("/assets/fonts/barlow-regular-webfont.woff2") format("woff2");
 }
-
 @font-face {
-	font-family: "Reckless";
-	src: url("/assets/fonts/Reckless-RegularItalic.woff2") format("woff2");
+	font-family: "barlow-bold";
+	src: url("/assets/fonts/barlow-bold-webfont.woff2") format("woff2");
 }
 
 // Override theme settings (see ../template/settings.scss)
 
-$mainFont: TTCommonsPro,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
-$headingFont: TTCommonsPro,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+$mainFont: barlow, ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+$headingFont: barlow-bold, ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
 $codeFont: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
 
 $headingTextTransform: 'initial';
@@ -33,45 +32,35 @@ $headingTextTransform: 'initial';
 $mainColorMuted: rgba(255, 255, 255, 0.5);
 // $headingTextShadow: 0px 0px 6px rgba(0,0,0,0.2);
 // $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20px 20px rgba(0,0,0,.15);
-$heading1TextShadow: 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20px 20px rgba(0,0,0,.15);
+$heading1TextShadow: none;
+$heading1Size: 2.53em;
+$heading2Size: 2em;
 
 // Background generator
 @mixin bodyBackground() {
+	--trsit-black: black;
+	--trsit-yellow: #FFE000;
+	
+	html[data-theme="yellow"] & {
+		--r-background-color: var(--trsit-yellow);
+		--r-link-color: var(--trsit-black);
+		--r-main-color: var(--trsit-black);
+		--r-heading-color: var(--trsit-black);
+	}
 	html[data-theme="black"] & {
-		background: black;
-		--r-link-color: white;
-		--r-main-color: white;
-		--r-heading-color: white;
+		--r-link-color: var(--trsit-yellow);
+		--r-main-color: var(--trsit-yellow);
+		--r-heading-color: var(--trsit-yellow);
+		--r-background-color: var(--trsit-black);
 	}
-	html[data-theme="blue"] & {
-		background: #0017ee;
-		--r-link-color: white;
-		--r-main-color: white;
-		--r-heading-color: white;
+	html[data-theme="white"] & {
+		--r-link-color: var(--trsit-black);
+		--r-main-color: var(--trsit-black);
+		--r-heading-color: var(--trsit-black);
+		--r-background-color: white;
 	}
-	html[data-theme="calm-green"] & {
-		background: #c4d1ce;
-		--r-link-color: black;
-		--r-main-color: black;
-		--r-heading-color: black;
-	}
-	html[data-theme="calm-beige"] & {
-		background: #e1cfbf;
-		--r-link-color: black;
-		--r-main-color: black;
-		--r-heading-color: black ;
-	}
-	html[data-theme="calm-pink"] & {
-		background: #dcc8c2;
-		--r-link-color: black;
-		--r-main-color: black;
-		--r-heading-color: black ;
-	}
-	html[data-theme="calm-blue"] & {
-		background: #bdcad1;
-		--r-link-color: black;
-		--r-main-color: black;
-		--r-heading-color: black ;
+	html & {
+		background-color: var(--r-background-color);
 	}
 }
 
@@ -83,13 +72,17 @@ $heading1TextShadow: 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20p
 @import "../template/theme";
 // ---------------------------------------------
 .reveal {
-	--r-background-color: rgb(36,36,36);
 	--r-muted-color: rgb(196,196,196);
+	--r-selection-color: var(--r-background-color);
+	--r-selection-background-color: var(--r-heading-color);
+	h1 {
+		font-weight: bold;
+	}
 	blockquote {
 		font-style: normal;
 		font-family: $mainFont;
 		box-shadow: var(--r-heading1-text-shadow);
-		background-color: rgba(0, 0, 0, 0.15);
+		background-color: rgba(255, 255, 255, 0.15);
 
 		> :before, > :after {
 			content: '"';
@@ -111,11 +104,19 @@ $heading1TextShadow: 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20p
 			padding-inline: 1rem;
 		}
 	}
+	.code-wrapper {
+		border-radius: 5px 0 0 5px;
+		overflow: hidden;
+	}
 	pre code {
 		overflow-x : hidden;
 	}
 	pre code:first-child {
 		box-shadow: var(--r-heading1-text-shadow);
+	}
+	.code-bg {
+		padding: 0.1em 0.3em;
+		background-color: rgba(255, 255, 255, 0.15);
 	}
 	em,
 	blockquote em {
@@ -136,13 +137,12 @@ $heading1TextShadow: 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20p
 		background: var(--r-background-color);
 		box-shadow: var(--r-heading1-text-shadow);
 		color: white;
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
 
 		.icon {
 			width: 1em;
 		}
-
-		border-bottom-left-radius: 5px;
-		border-bottom-right-radius: 5px;
 	}
 	a {
 		background-repeat: no-repeat;
@@ -159,14 +159,14 @@ $heading1TextShadow: 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20p
 	}
 	.circle {
 		border-radius: 50%;
-		box-shadow: var(--r-heading1-text-shadow);
+		box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 20px 20px rgba(0, 0, 0, 0.15);
 	}
 	.image {
 		border-radius: 5px;
-		box-shadow: var(--r-heading1-text-shadow);
+		box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 20px 20px rgba(0, 0, 0, 0.15);
 	}
 	video {
-		box-shadow: var(--r-heading1-text-shadow);
+		box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 20px 20px rgba(0, 0, 0, 0.15);
 		border-radius: 5px;
 	}
 	.w-80 {
@@ -184,17 +184,33 @@ $heading1TextShadow: 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20p
 	.h-70 {
 		max-height: calc(var(--slide-height) - 6*var(--r-block-margin));
 	}
+	.small {
+		font-size: calc(40px * 0.7);
+	}
+	.browser {
+		width: 100%;
+		height: 550px;
+		transform: translate (-600px, 0) scale(0.7);
+		border: none;
+	}
+	.muted {
+		opacity: 0.75;
+		font-size: calc(40px * 0.7);
+	}
+	.fragment.muted.fade-in-then-semi-out.current-fragment {
+		opacity: 0.75;
+	}
 	.reveal-album {
 		display: inline-block;
-		width: 300px; 
+		width: 400px;
+		white-space: nowrap;
 	}
 	.reveal-album album-art {
-		height: 250px;
-		width: 250px;
-		display: inline-block; 
-	}
-	.small {
-		font-size: 0.75em;
+		height: 275px;
+		width: 275px;
+		display: inline-block;
+		overflow: hidden;
+		border-radius: 5px;
 	}
 	.warn {
 		padding: 2rem 5rem 2rem 8rem;
@@ -219,7 +235,7 @@ $heading1TextShadow: 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20p
 	.success {
 		padding: 2rem 5rem 2rem 8rem;
 		background: rgba(64, 255, 64, 0.35);
-		color: black;
+		color: var(--r-main-color);
 		text-align: left;
 		border-left: 15px solid lime;
 		box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15); 
@@ -237,7 +253,7 @@ $heading1TextShadow: 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20p
 		grid-template-columns: 1fr 1fr;
 		gap: 16px;
 		margin-inline-start: 5%;
-		width: 90%;
+		width: 95%;
 		.album-art-grid-item {
 			display: block;
 			border-radius: 5px;
@@ -277,69 +293,29 @@ $heading1TextShadow: 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20p
     margin: 0 auto;
 }
 
+.background-emoji {
+	inset: 0;
+	position: absolute;
 
-/*********************************************
- * Mixins for readability of transitions
- *********************************************/
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
 
- @mixin transition-global($style) {
-	.reveal .slides section[data-transition=#{$style}],
-	.reveal.#{$style} .slides section:not([data-transition]) {
-		@content;
-	}
-}
-@mixin transition-stack($style) {
-	.reveal .slides section[data-transition=#{$style}].stack,
-	.reveal.#{$style} .slides section.stack {
-		@content;
-	}
-}
-@mixin transition-horizontal-past($style) {
-	.reveal .slides>section[data-transition=#{$style}].past,
-	.reveal .slides>section[data-transition~=#{$style}-out].past,
-	.reveal.#{$style} .slides>section:not([data-transition]).past {
-		@content;
-	}
-}
-@mixin transition-horizontal-future($style) {
-	.reveal .slides>section[data-transition=#{$style}].future,
-	.reveal .slides>section[data-transition~=#{$style}-in].future,
-	.reveal.#{$style} .slides>section:not([data-transition]).future {
-		@content;
-	}
+	line-height: 0.96;
+
+	font-size: 100vh;
+	opacity: 0.15;
+
+	filter: blur(2px);
+
+	color: var(--r-main-color, yellow);
 }
 
-@mixin transition-vertical-past($style) {
-	.reveal .slides>section>section[data-transition=#{$style}].past,
-	.reveal .slides>section>section[data-transition~=#{$style}-out].past,
-	.reveal.#{$style} .slides>section>section:not([data-transition]).past {
-		@content;
-	}
-}
-@mixin transition-vertical-future($style) {
-	.reveal .slides>section>section[data-transition=#{$style}].future,
-	.reveal .slides>section>section[data-transition~=#{$style}-in].future,
-	.reveal.#{$style} .slides>section>section:not([data-transition]).future {
-		@content;
-	}
-}
-
-/*********************************************
- * SLIDE TRANSITION
- * Aliased 'linear' for backwards compatibility
- *********************************************/
-
- @each $stylename in slide, linear {
-	@include transition-horizontal-past(#{$stylename}) {
-		transform: none;
-	}
-	@include transition-horizontal-future(#{$stylename}) {
-		transform: none;
-	}
-	@include transition-vertical-past(#{$stylename}) {
-		transform: none;
-	}
-	@include transition-vertical-future(#{$stylename}) {
-		transform: none;
-	}
+clippy-element {
+	position: absolute;
+	opacity: 0;
+	left: calc(100% - 276px - 50px);
+	top: calc(100% - 368px - 50px);
+	transform: scale(0);
+	transition: all 0.5s ease-in-out;
 }
